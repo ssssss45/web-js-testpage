@@ -1,0 +1,139 @@
+.content-part {
+    display: block;
+    width: auto;
+    margin: $MARGIN-PART;
+    margin-left: 50px;
+    font-size: 0;
+
+    @include TABLET-N{
+	    display: block;
+	    margin: 0 $CONT-P-MARGIN;
+	    box-sizing: border-box;
+    }
+
+    @include PHONE-N{
+	    display: block;
+	    width: 100%;
+        margin: 0 auto 0;
+	    padding: 0 $PADDING-HEADER-PHONE 75px;
+	    box-sizing: border-box;
+    }
+
+    @include DESKTOP-N{
+        margin: 0 $CONT-P-MARGIN;
+        display: block;
+    }
+
+    @include DESKTOP-S{
+        margin: $MARGIN-PART-REM;
+        margin-left: 50rem;
+    }
+}
+
+
+
+.content-part_contacts{
+    width: calc(100% - #{$MENU-INNER-WEDTH + $BORDER-DESKTOP * 2} );
+    height: calc(100vh - #{$HEADER-HEIGHT + $BORDER-DESKTOP * 2} );
+    font-size: 0;
+    margin: 0;
+    display: block;
+    position: relative;
+    min-height: 615px;
+    // margin: auto auto auto 294px  ;
+
+    .page-title{
+        margin-bottom: 50px;
+        margin-top: 0;
+
+        @include TABLET-N{
+            margin-bottom: 70px;
+        }
+        @include PHONE-N{
+            margin-bottom: 32px;
+        }
+    }
+
+     @include DESKTOP-N{
+        width: calc(100vw - #{ $BORDER-TABLET * 2} );
+        min-height: calc(100vh - #{$HEADER-HEIGHT-TABLET + $BORDER-TABLET * 2} );
+        margin: 0;
+
+        .page-title{
+            margin: 62px auto 45px;
+            letter-spacing: 0.9px;
+        }
+
+        .column-item h5 {
+            font-size: 14px;
+            line-height: 1.15;
+            margin-bottom: 13px;
+            width: 150px;
+        }
+    }
+
+    @include DESKTOP-S{
+        width: calc(100vw - #{$MENU-INNER-WEDTH-REM + $BORDER-DESKTOP-REM * 2} );
+        min-height: calc(100vh - #{$HEADER-HEIGHT-REM + $BORDER-DESKTOP-REM * 2} );
+        font-size: 0;
+        margin: 0;
+    }
+
+    @include TABLET-N{
+        width: calc(100% - #{ $BORDER-TABLET * 2} );
+        min-height: calc(100vh - #{$HEADER-HEIGHT-TABLET + $BORDER-TABLET * 2} );
+        margin: 0 auto;
+    }
+
+    @include PHONE-N{
+        display: block;
+        width: 100%;
+        margin: 35px auto 0;
+        padding: 0 $PADDING-HEADER-PHONE 75px;
+        box-sizing: border-box;
+        height: auto;
+
+        .column-item:before{
+            width: 180px;
+        }
+        .column-item h5 {
+            width: 180px
+        }
+    }
+
+}
+
+
+
+.content-part__wrapper {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 370px;
+    width: 900px;
+
+    @include DESKTOP-S{
+        height: 450rem;
+        width: 900rem;
+    }
+
+    @include TABLET-N{
+        width: 468px;
+        height: 600px;
+    }
+
+    @include DESKTOP-N{
+        width: 700px;
+        // position: relative;
+    }
+
+    @include PHONE-N{
+        position: relative;
+        height: auto;
+        width: auto;
+    }
+}

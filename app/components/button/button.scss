@@ -1,0 +1,136 @@
+.button{
+	cursor: pointer;
+	outline: transparent;
+	cursor: pointer;
+    user-select: none;
+}
+
+.button_dark {
+    
+    display: inline-block;
+    width: 62%;
+    box-sizing: border-box;
+    float: left;
+    background: $disectiv;
+    color: #ffffff;
+    border: 1px solid $disectiv;
+
+    &:hover{
+    	background: $active;
+    	border: 1px solid $active;
+    }
+
+    @include DESKTOP-N{
+        display: inline-block;
+        box-sizing: border-box;
+        float: left;
+        background: #b3aaaf;
+        color: #ffffff;
+        border: 1px solid #b3aaaf;
+    }
+}
+
+
+.button_small {
+    display: inline-block;
+    width: 38%;
+    box-sizing: border-box;
+    vertical-align: top;
+    float: left;
+    border: 1px solid $disectiv;
+
+    .button__text{
+        color: $sdark;    
+    }
+
+    &:hover{
+        background: $active;
+        border: 1px solid $active;
+
+        .button__text{
+            color: #ffffff;
+        }
+    }
+    @include DESKTOP-N{
+        display: inline-block;
+        box-sizing: border-box;
+        vertical-align: top;
+        float: left;
+        border: 1px solid #b3aaaf;
+    }
+}
+
+.button__text {
+
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+
+    @include FONT-BUTTON();
+
+}
+
+.button_fixed{
+    float: none;
+    display: inline-block;
+    width: auto;
+    height: auto;
+
+    .button__text{
+        line-height: 42px;
+        padding: 0 31px;
+        display: inline-block;
+        width: auto;
+        margin: auto;
+    }
+    
+     @include PHONE-N{
+        margin: 0;
+        display: block;
+        display: inline-block;
+        width: auto;
+        margin-top: 18px;
+
+        .button__text{
+            line-height: 41px;
+            padding: 0 26px;
+        }
+    }
+
+    @include TABLET-N{
+        display: inline-block;
+        margin: 0 auto ;
+        width: auto;
+
+        .button__text{
+            line-height: 30px;
+            padding: 0 26px;
+        }
+    }
+
+    @include DESKTOP-N{
+        display: block;
+        display: inline-block;
+        width: auto;
+        float: none;
+
+        .button__text{
+            line-height: 30px;
+            padding: 0 26px;
+        }
+    }
+   
+    @include DESKTOP-S{
+        display: block;
+        display: inline-block;
+        height: auto;
+        width: auto;
+
+        .button__text{
+            line-height: 41rem;
+            @include font-base_s( $min-font:14px, $add:2, $ls:.55px);
+            padding: 0 31rem;
+        }
+    }
+}

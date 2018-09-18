@@ -1,0 +1,15 @@
+.not-mobile{
+
+	@include PHONE-N {
+		display: none;
+	}
+
+	@include TABLET-N {
+		display: none;
+	}
+
+	@include DESKTOP-N{
+		display: none;
+	}
+
+}

@@ -1,0 +1,546 @@
+/*
+██╗  ██╗███████╗ █████╗ ██████╗ ███████╗██████╗ 
+██║  ██║██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗
+███████║█████╗  ███████║██║  ██║█████╗  ██████╔╝
+██╔══██║██╔══╝  ██╔══██║██║  ██║██╔══╝  ██╔══██╗
+██║  ██║███████╗██║  ██║██████╔╝███████╗██║  ██║
+╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝
+*/
+.header {
+	display: block;
+	width: auto;
+	margin: 0 $MENU-INNER-WEDTH 0 9px;
+	height: $HEADER-HEIGHT;
+	padding: $PADDING-HEADER-TABLET $PADDING-HEADER-TABLET 0;
+	box-sizing: border-box;
+	position: relative;
+   
+	@include PHONE-N {
+
+		display: block;
+		width: 100%;
+		height: 80px;
+		z-index: 50;
+		position: relative;
+		float: none;
+		padding: $PADDING-HEADER-PHONE $PADDING-HEADER-PHONE 0;
+		margin: 0;
+
+		&:before {
+		    content: "";
+		    display: block;
+		    clear: both;
+		    width: 100vw;
+		    height: $BORDER-PHONE;
+		    position: fixed;
+		    top: 0;
+		    left: 0;
+		    background: #fff;
+		}
+	}
+
+	
+	@include TABLET-N {
+		width: 100%;
+		position: relative;
+		float: none;
+		padding: $PADDING-HEADER-TABLET $PADDING-HEADER-TABLET 0;
+		height: 116px;
+		margin: 0;
+
+	}
+   
+	@include DESKTOP-N {
+		width: auto; 
+		position: relative;
+		float: none;
+		padding: $PADDING-HEADER-TABLET $PADDING-HEADER-TABLET 0;
+		height: 111px;
+		margin: 0;
+	}
+
+	@include DESKTOP-S {
+		width: auto;
+		margin: 0 $MENU-INNER-WEDTH-REM 0 9rem;
+		padding: 40rem 40rem 0;
+		height: $HEADER-HEIGHT-REM;
+	}
+
+
+	.page_index &{
+		width: 100%;
+		float: none;
+		padding: ($PADDING-HEADER-DESKTOP - 5px) $PADDING-HEADER-DESKTOP 0;
+		box-sizing: border-box;
+		height: auto;
+		z-index: 50;
+
+		.header__logo{
+			width: 330px;
+			height: 115px;
+
+			@include PHONE-N{
+				width: 190px;
+				height: 70px;
+			}
+		}
+
+
+		.header__right{
+			right: 75px - 25px;
+			height: 100px;
+
+			@include PHONE-N{
+				height: 110px;
+				bottom: 0;
+				padding: 0 $BORDER-PHONE 0;
+				box-sizing: border-box;
+				
+				.header__phone{
+					margin-top: 70px;
+					padding-top: 0;
+				}
+				.header__separator{
+					margin-top: 70px;
+					padding-top: 0;
+				}
+				.langs{
+					margin-top: 70px;
+					padding-top: 0;
+				}
+
+				.links-button{
+					width: 272px;
+					display: block;
+					height: 41px;
+					box-sizing: border-box;
+					// padding: 0 ( $PADDING-HEADER-PHONE + $BORDER-PHONE );
+					padding-top: $BORDER-PHONE;
+					margin: 0 auto;
+
+				}
+			}
+
+			@include DESKTOP-S{
+				right: 50rem;
+			}
+		}
+
+		@include TABLET-N{
+			width: 100%;
+			// float: none;
+			height: 135px;
+			padding: $PADDING-HEADER-TABLET 38px 0;
+
+			.header__menu{
+				display: none;
+			}
+			.header__right{
+				right: $PADDING-HEADER-TABLET;
+				// height: 15px;
+			}
+
+
+			.header__left {
+				position: absolute;
+				height: 76px;
+				top: 7px;
+			}
+
+			.header__logo {
+				width: 247px;
+				height: 92px;
+			}
+
+
+		}
+
+		@include PHONE-N{
+			width: 100%;
+			float: none;
+			padding: 13px 13px 0;
+		}
+
+		@include DESKTOP-N{
+			width: 100%;
+			float: none;
+			height: 135px;
+
+			.header__menu{
+				display: none;
+			}
+			.header__right{
+				right: ($PADDING-HEADER-DESKTOP - $BORDER-DESKTOP );
+				height: 48px;
+			}
+
+			.header__left {
+				position: absolute;
+				height: 76px;
+				top: 7px;
+			}
+
+			.header__logo {
+				width: 247px;
+				height: 92px;
+			}
+			
+		}
+	}
+}
+
+
+/*
+██╗     ███████╗███████╗████████╗
+██║     ██╔════╝██╔════╝╚══██╔══╝
+██║     █████╗  █████╗     ██║   
+██║     ██╔══╝  ██╔══╝     ██║   
+███████╗███████╗██║        ██║   
+╚══════╝╚══════╝╚═╝        ╚═╝   
+*/
+.header__left {
+	display: inline-block;
+	vertical-align: bottom;
+	bottom: 0;
+	margin: auto;
+	height: 118px;
+
+	@include TABLET-N{
+		position: absolute;
+		height: 76px;
+		bottom: 0;
+	}
+
+	@include PHONE-N{
+		display: inline-block;
+		width: 75%;
+		height: 100%;
+	}
+
+	@include DESKTOP-N{
+		position: absolute;
+		height: 76px;
+		bottom: 0;
+	}
+}
+
+
+
+/*
+██╗      ██████╗  ██████╗  ██████╗ 
+██║     ██╔═══██╗██╔════╝ ██╔═══██╗
+██║     ██║   ██║██║  ███╗██║   ██║
+██║     ██║   ██║██║   ██║██║   ██║
+███████╗╚██████╔╝╚██████╔╝╚██████╔╝
+╚══════╝ ╚═════╝  ╚═════╝  ╚═════╝ 
+*/
+.header__logo{
+	display: inline-block;
+	width: 245px;
+	height: 100px;
+	background: url("../images/logo.svg") no-repeat center;
+	background-size: contain;
+
+
+	@include TABLET-N{
+		width: 182px;
+		height: 71px;
+	}
+
+	@include PHONE-N{
+		width: 190px;
+		height: 65px;
+	}
+
+	@include DESKTOP-N{
+		width: 182px;
+		height: 71px;
+	}
+
+	@include DESKTOP-S{
+		width: 245rem;
+		height: 100rem;
+	}
+}
+
+
+/*
+██████╗ ██╗ ██████╗ ██╗  ██╗████████╗
+██╔══██╗██║██╔════╝ ██║  ██║╚══██╔══╝
+██████╔╝██║██║  ███╗███████║   ██║   
+██╔══██╗██║██║   ██║██╔══██║   ██║   
+██║  ██║██║╚██████╔╝██║  ██║   ██║   
+╚═╝  ╚═╝╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   
+*/
+.header__right {
+	
+	$header-right-pt_desktop: 54px;
+
+	display: inline-block;
+	vertical-align: bottom;
+	right: $PADDING-HEADER-TABLET;
+	height: $PHONE-H_TABLET;
+	// top: 6px;
+	top: $header-right-pt_desktop;
+	// margin: auto;
+	position: absolute;
+	font-size: 0;
+
+
+	@include PHONE-N {
+
+		position: fixed;
+		left: 0;
+		top: auto;
+		bottom: 0;
+		margin: auto;
+
+		height: 60px;
+		width: 100%;
+		
+
+		text-align: center;
+		background: #ffffff;
+		z-index: 50;
+
+	}
+
+
+    @include TABLET-N {
+        height: $PHONE-H_TABLET;
+        right: $PADDING-HEADER-TABLET + 50px + 14px + 28px;
+        top: 44px;
+    }
+
+	@include DESKTOP-N {
+		height: $PHONE-H_TABLET;
+		right: $PADDING-HEADER-TABLET + 50px + 14px + 28px;
+		top: 38px;
+	}
+
+	@include DESKTOP-S{
+
+		height: $PHONE-H_TABLET_REM;
+		top: 54px;
+		// bottom: 12rem;
+
+	}
+
+}
+
+
+
+/*
+██████╗ ██╗  ██╗ ██████╗ ███╗   ██╗███████╗
+██╔══██╗██║  ██║██╔═══██╗████╗  ██║██╔════╝
+██████╔╝███████║██║   ██║██╔██╗ ██║█████╗  
+██╔═══╝ ██╔══██║██║   ██║██║╚██╗██║██╔══╝  
+██║     ██║  ██║╚██████╔╝██║ ╚████║███████╗
+╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+*/
+
+
+
+.header__phone {
+
+	display: inline-block;
+	// font-size: 32px;
+	vertical-align: top;
+	text-decoration: none;
+	color: $sdark;
+
+	@include FONT-HEADER-PHONE();
+	line-height: 22px;
+
+	@include PHONE-N {
+
+		// font-size: 24px;
+		line-height: $PHONE-H_PHONE;
+		margin: 0 auto;
+		text-decoration: none !important;
+		margin-top: $PHONE-PT_PHONE;
+	}
+
+	@include TABLET-N {
+		// font-size: 24px;
+		line-height: $PHONE-H_TABLET;
+	}
+
+	@include DESKTOP-N {
+		// font-size: 24px;
+		line-height: $PHONE-H_TABLET;
+	}
+
+	 @include DESKTOP-S {
+		// font-size: 32rem;
+		line-height: $PHONE-H_TABLET_REM;
+	}
+
+}
+
+
+
+/*
+███╗   ███╗███████╗███╗   ██╗██╗   ██╗
+████╗ ████║██╔════╝████╗  ██║██║   ██║
+██╔████╔██║█████╗  ██╔██╗ ██║██║   ██║
+██║╚██╔╝██║██╔══╝  ██║╚██╗██║██║   ██║
+██║ ╚═╝ ██║███████╗██║ ╚████║╚██████╔╝
+╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝ ╚═════╝ 
+*/
+
+.header__menu {
+
+    height: 100%;
+    width: 0px;
+    display: inline-block;
+    float: right;
+    opacity: 0;
+    vertical-align: middle;
+    transition: opacity 0.3s;
+
+    &:hover{
+        opacity: 0.5;
+    }
+
+    @include PHONE-N{
+        opacity: 1;
+        width: 28px;
+        padding: 1px;
+        height: 22px;
+        background: url("../images/menu.png") no-repeat center;
+        position: fixed;
+        opacity: 0.5;
+        top: $BORDER-PHONE + $PADDING-HEADER-PHONE;
+        right: $BORDER-PHONE + $PADDING-HEADER-PHONE;
+
+        .page_index &{
+    	   display: none; 
+        }
+    }
+
+    @include TABLET-N{
+    	opacity: 1;
+        width: 14px;
+        padding: 0 50px 0 0;
+        height: 25px;
+        background: url('../images/menu.png') no-repeat left center;
+        position: absolute;
+        cursor: pointer;
+        background-size: 22%;
+        top: 38px;
+        left: auto;
+        right: 40px;
+
+        &:after{
+            content: "МЕНЮ";
+            display: inline-block;
+            clear: both;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            height: 22px;
+            line-height: 20px;
+            font-size: 12px;
+        }
+    }
+
+    @include DESKTOP-N{
+        opacity: 1;
+        width: 14px;
+        padding: 0 50px 0 0;
+        height: 25px;
+        background: url('../images/menu.png') no-repeat left center;
+        position: absolute;
+        cursor: pointer;
+        background-size: 22%;
+        top: 33px;
+        left: auto;
+        right: 40px;
+
+        &:after{
+            content: "МЕНЮ";
+            display: inline-block;
+            clear: both;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            height: 22px;
+            line-height: 20px;
+            font-size: 12px;
+        }
+    }
+
+}
+
+
+/*
+███████╗███████╗██████╗ ███████╗ █████╗ ██████╗  █████╗ ████████╗ ██████╗ ██████╗ 
+██╔════╝██╔════╝██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝██╔═══██╗██╔══██╗
+███████╗█████╗  ██████╔╝█████╗  ███████║██████╔╝███████║   ██║   ██║   ██║██████╔╝
+╚════██║██╔══╝  ██╔═══╝ ██╔══╝  ██╔══██║██╔══██╗██╔══██║   ██║   ██║   ██║██╔══██╗
+███████║███████╗██║     ███████╗██║  ██║██║  ██║██║  ██║   ██║   ╚██████╔╝██║  ██║
+╚══════╝╚══════╝╚═╝     ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝
+*/
+.header__separator{
+
+	width: 1px;
+	height: $PHONE-H_DESKTOP;
+	display: inline-block;
+	line-height: 18px;
+	vertical-align: top;
+	margin-left: 30px;
+	margin-right: 33px;
+	position: relative;
+
+	&:after{
+		content: "";
+		position: absolute;
+		top: -8px;
+		left: 0;
+		width: 1px;
+		height: $PHONE-H_DESKTOP + 8px * 2; 
+		background: $COLOR-GRAY_LIGHT;
+
+	}
+
+	@include PHONE-N {
+		line-height: $PHONE-H_PHONE;
+		&:after{
+			top: -6px;
+			height: $PHONE-H_PHONE + 6px * 2; 
+		}
+
+		margin-left: 23px;
+		margin-right: 23px;
+		margin-top: $PHONE-PT_PHONE;
+	}
+	
+	@include TABLET-N {
+		line-height: $PHONE-H_TABLET;
+		&:after{
+			top: -6px;
+			height: $PHONE-H_TABLET + 6px * 2; 
+		}
+		margin-left: 23px;
+		margin-right: 23px;
+	}
+
+	@include DESKTOP-N {
+		line-height: $PHONE-H_TABLET;
+		&:after{
+			top: -6px;
+			height: $PHONE-H_TABLET + 6px * 2; 
+		}
+		margin-left: 23px;
+		margin-right: 23px;
+	}
+
+	 @include DESKTOP-S {
+		line-height: $PHONE-H_TABLET_REM;
+	}
+}

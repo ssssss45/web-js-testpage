@@ -1,0 +1,93 @@
+// ADAPTIVE */
+// @mixin ADAPTIVE($media) {
+//     @if $media == phone {// phones only
+//         @media only screen and (max-width: $WIDTH-TABLET - 1) { @content; }
+//     }
+//     @else if $media == tablet {// tablets only
+//         @media only screen and (min-width: $WIDTH-TABLET) and (max-width: $WIDTH-MEDIUM - 1) { @content; }
+//     }
+//     @else if $media == mobile {// tablets and smaller
+//         @media only screen and (max-width: $WIDTH-MEDIUM - 1) { @content; }
+//     }
+//     @else if $media == medium {
+//         @media only screen and (min-width: $WIDTH-MEDIUM) and (max-width: $WIDTH-WIDE - 1) { @content; }
+//     }
+//     @else if $media == wide {
+//         @media only screen and (min-width: $WIDTH-WIDE) { @content; }
+//     }
+// }
+/* 
+@mixin PHONE{
+    @media only screen and (max-width: $WIDTH-TABLET - 1) { @content; }
+}
+
+@mixin NOT-PHONE{
+     @media only screen and (min-width: $WIDTH-TABLET) { @content; }
+}
+
+@mixin TABLET{
+    @media only screen and (min-width: $WIDTH-TABLET) and (max-width: $WIDTH-MEDIUM - 1) { @content; }
+}
+
+@mixin DESKTOP{
+    @media only screen and (min-width: $WIDTH-MEDIUM) { @content; }
+}
+
+@mixin NOT-DESKTOP{
+    @media only screen and (max-width: $WIDTH-PHONE - 1) { @content; }
+} */
+
+// @mixin NOT-DESKTOP-HEIGHT{
+//     @media only screen and (max-height: $HEIGHT-MEDIUM - 1) { @content; }
+// }
+
+// @mixin MEDIUM{
+//     @media only screen and (min-width: $WIDTH-MEDIUM) { @content; }
+// }
+
+@mixin A-HEIGHT(){
+    @media only screen and (max-height: $HEIGHT-ULTRA) and (min-width: $WIDTH-DESKTOP-1200 - 1) { @content; }
+}
+
+
+
+
+// NEW
+@mixin PHONE-N{
+    @media only screen and (max-width: $WIDTH-PHONE-N - 1) { @content; }
+}
+
+@mixin TABLET-N{
+    @media only screen and (min-width: $WIDTH-PHONE-N) and (max-width: $WIDTH-TABLET-N - 1) { @content; }
+}
+
+@mixin DESKTOP-N{
+    @media only screen and (min-width: $WIDTH-TABLET-N) and (max-width: $WIDTH-DESKTOP-1200 - 1) { @content; }
+}
+
+@mixin DESKTOP-S{
+    @media only screen and (min-width: $WIDTH-DESKTOP-1200) and (max-width: $WIDTH-DESKTOP-N - 1) { @content; }
+}
+
+@mixin LARGE{
+    @media only screen and (min-width: $WIDTH-DESKTOP-N) { @content; }
+}
+
+
+// .tablet-hide{
+//     @include ADAPTIVE(tablet){display: none;}
+// }
+
+// .phone-hide{
+//     @include ADAPTIVE(phone){display: none;}
+// }
+
+// .phone-only{
+//     display: none;
+//     @include ADAPTIVE(phone){display: block;}
+// }
+// .phone-only-inline{
+//     display: none;
+//     @include ADAPTIVE(phone){display: inline-block;}
+// }
+/* ADAPTIVE*/

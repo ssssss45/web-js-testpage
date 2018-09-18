@@ -1,0 +1,179 @@
+.hex-button{
+	cursor: pointer;
+	outline: transparent;
+	// transition: all .2s;
+	cursor: pointer;
+
+	display: inline-block;
+    width: 127px;
+    height: 127px + 20px;
+
+    position: relative;
+    margin: 8px 4px 0;
+    vertical-align: middle;
+    transition: none;    
+	
+	svg{
+
+		width: 100%;
+		height: 100%;
+        
+		.fill{
+			fill: #b3aaaf;
+			transition: .5s fill;
+		}
+		
+		.outline{
+	    	stroke-dasharray: 330;
+	  		stroke-dashoffset: 330;
+	    }
+
+	}
+    
+    .ie11 &{
+        svg{
+
+            .fill{
+              transition: .4s opacity;  
+            }
+
+            .outline{
+                transition: opacity .3s; 
+                opacity: 0;
+                stroke-dasharray: 0;
+                stroke-dashoffset: 0;
+            }
+        }
+    }
+
+    &:hover{
+        // box-sizing: border-box;
+        // width: 132px;
+        // height: 153px;
+        // background-size: cover;
+        // vertical-align: middle;
+        // margin-top: 0px;
+        .outline{
+            animation: dash 1s ease-in-out forwards;
+        }
+        .fill{
+            fill: #6d5b66;
+        }
+    }
+
+    .ie11 &:hover{
+        .outline{
+            opacity: 1;
+        }
+        .fill{
+            fill: #6d5b66;
+        }
+    }
+
+
+    @include TABLET-N{
+    	width: 96px;
+    	height: 106px;
+	    margin: 0 4px ;
+
+        outline:transparent;
+	    .button__text{
+    	    width: 60px;
+            font-size: 14px;
+    		
+	    }
+    }
+
+    @include DESKTOP-N{
+        width: 82px;
+        height: 95px;
+        margin: 10px 8px 0;
+
+        .button__text{
+            width: 60px;
+            font-size: 14px;
+        }
+    }
+
+    @include PHONE-N{
+    	margin: 0;
+	    width: 82px;
+    	height: 95px;
+
+    	.button__text{
+    	    width: 60px;
+    		font-size: 14px;
+	    }
+    }
+
+   	@keyframes dash {
+	  from{
+	    stroke-dashoffset: 330;
+	  }
+	  to {
+	    stroke-dashoffset: 0;
+	  }
+	}
+
+}
+
+.hex-button__text{
+    
+    display: inline-block;
+    text-decoration: none;
+
+    @include FONT-HEX-BUTTON();
+
+    text-transform: uppercase;
+    color: #ffffff;
+    
+    box-sizing: border-box;
+    
+	position: relative;
+    margin: auto;
+    top: -57%;
+
+    width: auto;
+    padding-bottom: 2px;
+
+    
+    @include PHONE-N {
+        top: -59%;
+    }
+
+    @include TABLET-N {
+    	top: -56%;
+    }
+
+    @include DESKTOP-N {
+        top: -59%;
+    }
+
+    @include DESKTOP-S{
+        top: -55%;
+    }
+
+    &:after{
+    	content: "";
+    	position: absolute;
+    	bottom: 0;
+		left: 50%;
+    	width: 0;
+    	height: 1px;
+    	background-color: white;
+    	transition: .2s width, .2s left;
+    }
+
+}
+
+.hex-button_ready{
+	
+	.hex-button__text{
+
+		&:after{
+	    	width: 100%;
+	    	left: 0;
+	    }
+
+	}
+}

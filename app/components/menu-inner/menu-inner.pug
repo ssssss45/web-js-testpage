@@ -1,0 +1,31 @@
+mixin menu-inner( current_page, current_city )
+  .menu-inner(data-city=current_city)
+    .menu-inner__wrapper
+      .menu-inner__button-close
+      ul.menu-inner__list
+        li( class=( "menu-inner__item " + ( current_page == "preserve-and-increase" ? "menu-inner__item_choosed" : "" )) )
+          a(href="preserve-and-increase.html",data-use-city="true") Сохранить и приумножить
+        li( class=( "menu-inner__item " + ( current_page == "get-financing" ? "menu-inner__item_choosed" : "" )) )
+          a(href="get-financing.html",data-use-city="true") Получить финансирование
+        li( class=( "menu-inner__item " + ( current_page == "business-solutions" ? "menu-inner__item_choosed" : "" )) )
+          a(href="business-solutions.html") Решение для вашего бизнеса
+        li( class=( "menu-inner__item " + ( current_page == "banking-services" ? "menu-inner__item_choosed" : "" )) )
+          a(href="banking-services.html") Банковское обслуживание
+        li( class=( "menu-inner__item " + ( current_page == "family-solutions" ? "menu-inner__item_choosed" : "" )) )
+          a(href="family-solutions.html") Решения для вашей семьи и консалтинг
+        li.menu-inner__item.menu-inner__item-line
+        li( class=( "menu-inner__item " + ( current_page == "about" ? "menu-inner__item_choosed" : "" )) )
+          a(href="about.html") О нас
+        li( class=( "menu-inner__item " + ( current_page == "contacts" ? "menu-inner__item_choosed" : "" )) )
+          a(href="contacts.html") Контактная информация
+        include ../links-button/links-button.pug
+      .menu-inner__download
+        .menu-inner__download-button
+          a(href="#").link_button
+            .menu-inner__download-button-img
+            .menu-inner__download-button-text Скачать «Услуги FWR»
+        p.menu-inner__footer
+          |&copy;&nbsp;2009-2017&nbsp;АО &laquo;Райффайзенбанк&raquo; <br>
+          a(href="https://www.raiffeisen.ru" target="_blank").menu-inner__footer-link
+            |www.raiffeisen.ru
+  block

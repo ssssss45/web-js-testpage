@@ -1,0 +1,180 @@
+.modal {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    
+    perspective: 500px;
+
+    .button{
+
+        @include font( $FONT-BASE );
+        float: none;
+        width: 115px;
+        height: auto;
+        border: 0;
+        padding: 0;
+        display: block;
+        
+        .button__text{
+            line-height: 40px;
+        }
+
+        &:hover{
+            border: 0;
+        }
+
+        @include PHONE-N{
+            width: 100%;
+        }
+
+        @include DESKTOP-S{
+            width: 115rem;
+
+            .button__text{
+                @include font-base_s( 14px, 2, .55px, 40px);
+            }
+        }
+    }
+
+    @include PHONE-N{
+	    display: block;
+	    position: fixed;
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+	    top: 0;
+	    left: 0;
+        z-index: 50;
+    }
+}
+
+.modal__fader {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(256,256,256,0.5);
+}
+
+.modal__wrapper {
+    display: block;
+    width: 656px;
+    padding: 76px 87px;
+    box-sizing: border-box;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-height: 345px;
+    max-height: 582px;
+    background: #ffffff;
+    box-shadow: 0px 10px 65px -15px rgba(0,0,0,0.3);
+    
+    transform-origin: center center -1000px;
+
+    @include PHONE-N{
+        position: relative;
+        display: block;
+	    width: 100%;
+        min-height: 500px;
+        max-height: 100vh;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 15px;
+        z-index: 67;
+    }
+
+    @include DESKTOP-S{
+        width: 656rem;
+        padding: 76rem 87rem;
+        min-height: 345rem;
+        max-height: 597rem;
+    }
+}
+
+.modal__button-close{
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	top:50px;
+	right: 62px;
+	background: url("../images/close.svg") no-repeat center;
+	cursor: pointer;
+    transition: all 0.3s;
+    background-size: contain;
+
+    &:hover{
+        opacity: 0.5;
+    }
+
+	@include PHONE-N{
+        top: 23px;
+        right: 28px;
+	}
+
+    @include DESKTOP-S{
+        width: 22rem;
+        height: 22rem;
+        top:50rem;
+        right: 62rem;
+    }
+}
+
+.modal__title{
+	color: $sdark;
+	margin-bottom: 50px;
+
+    @include FONT-CONTENT-TITLE();
+
+	@include PHONE-N{
+		margin-bottom: 40px;
+        letter-spacing: 0.6px;
+	}
+
+    @include DESKTOP-S{
+        margin-bottom: 50rem;
+        // @include font-base_s( 48px, 2, .55px, 54px);
+    }
+}
+
+.modal__text {
+    margin-bottom: 45px;
+    width: 285px;
+    opacity: 0.5;
+
+    @include FONT-MODAL-INPUT();
+
+    line-height: 21px;
+
+    @include PHONE-N{
+	    line-height: 24px;
+	    width: 270px;
+	    margin: 0 auto 35px;
+    }
+
+    @include DESKTOP-S{
+
+        margin-bottom: 45rem;
+        // width: 285rem;
+        @include font-base_s( 16px, 2, .55px, 21px);
+    }
+}
+
+.modal__content {
+    
+    @include PHONE-N{
+    	padding: 30px 10px;
+    }
+}
+
+.modal__form {
+    font-size: 0;
+}

@@ -1,0 +1,20 @@
+.index-part
+  
+  script(src='scripts/libs/easeljs-0.8.1.min.js')
+  script(src='scripts/libs/preloadjs-0.6.1.min.js')
+  script(src='assets/main-animation.js')
+
+  .index-part__title
+    .index-part__title_sup Private Banking
+    .index-part__title_big
+      p Объединяя возможности
+    .index-part__title_big
+      p Москвы и Вены
+    .index-part__title_sub Сделайте Ваш выбор
+    
+    a(href="moscow.html").__left.hex-button
+      include ../hex-button/hex-button.html
+      .hex-button__text Москва
+    a(href="wien.html").__right.hex-button
+      include ../hex-button/hex-button.html
+      .hex-button__text Вена

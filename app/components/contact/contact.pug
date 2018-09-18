@@ -1,0 +1,6 @@
+mixin contact(name, value)
+  .contact&attributes(attributes)
+    .contact__name= name
+    ul.contact__content
+      each val in value
+        li: a(href=val.href)= val.text

@@ -1,0 +1,9 @@
+
+mixin inner-part-column()
+  .inner-part-column&attributes(attributes)
+    block
+
+mixin inner-part-content(title)
+  .inner-part-content&attributes(attributes)
+    h2.inner-part__title= title 
+    block

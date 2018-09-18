@@ -1,0 +1,23 @@
+mixin page(title, addLinksButton, wrapper_classes)
+  doctype html
+  html
+    head
+      title= title
+
+      meta(name="og:title" content="FW Raiffeisen — Private Banking Райффайзенбанка: Финансовые решения для частного капитала")
+      meta(name="og:description" content="Friedrich Wilhelm Raiffeisen — подразделение по работе с состоятельными клиентами АО «Райффайзенбанк», предоставляющее финансовые решения для владельцев крупного частного капитала и их семей в России и за рубежом.")
+      meta(name="og:image" content="images/thumbnail.png")
+      include _head.html
+
+    body&attributes(attributes)
+
+      include ../header/header.pug
+      include ../mixins/mixins.pug
+      div( class=("wrapper " + wrapper_classes) )
+        .orientation-warning
+          .orientation-warning__wrapper
+            .orientation-warning__img
+            .orientation-warning__text Поверните <br> устройство
+        .fade
+        +header(addLinksButton)
+        block

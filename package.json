@@ -1,0 +1,56 @@
+{
+  "project_name": "Raiffeisen",
+  "name": "Raiffeisen",
+  "version": "1.0.0",
+  "description": "Raiffeisen",
+  "author": "peppers-studio.ru",
+  "private": true,
+  "engines": {
+    "node": ">=4"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-eslint": "^3.0.0",
+    "gulp-filter": "^5.0.0",
+    "gulp-htmlhint": "^0.3.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-svg-symbols": "^2.0.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.2",
+    "gulp-watch": "^4.3.11",
+    "http-proxy-middleware": "^0.17.4",
+    "main-bower-files": "^2.5.0",
+    "run-sequence": "^1.2.2",
+    "wiredep": "^4.0.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "browser": true,
+      "jquery": true
+    },
+    "rules": {
+      "quotes": [
+        2,
+        "single"
+      ]
+    }
+  },
+  "dependencies": {
+    "bower": "^1.8.4"
+  }
+}

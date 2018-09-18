@@ -1,0 +1,583 @@
+
+// // fonts //
+
+$fnb: 'Futura New Book';
+$fnd: 'Futura New Demi';
+$fn: 'Futura New';
+
+$FONT-BASE: 'Futura New';
+$FONT-BOLD: 'Futura New Book';
+$FONT-TITLE: 'Futura New Demi';
+
+
+@mixin font( $f, $fz: undefined, $lh: undefined ){
+	font-family: $f;
+	@if( $f == $FONT-BASE ){
+		.opera &{
+			font-weight: bold;
+		}
+	}
+	@if( $fz ) { font-size: $fz };
+	@if( $lh ) { line-height: $lh };
+}
+
+@mixin font-base_s( $min-font:16px, $add:2, $ls:.55px, $line-h:undefined ){
+	font-size: calc( #{$min-font} + ( 100vw - 1200px ) / 400 * #{$add} );
+	letter-spacing: $ls;
+	@if( $line-h ) { line-height: calc( #{$line-h} + ( 100vw - 1200px ) / 400 * #{$add} ); }
+}
+
+// tanya //
+
+// @include FONT-CONTENT-TITLE();
+
+@mixin FONT-CONTENT-TITLE(){
+	font-family: $FONT-BASE;
+	font-size: 48px;
+	letter-spacing: 0;
+	line-height: 54px;
+
+	@include PHONE-N {
+		font-size: 36px;
+		letter-spacing: 0;
+		line-height: 36px;	
+	}
+	
+	@include TABLET-N {
+		font-size: 36px;
+		letter-spacing: 0.9px;
+		line-height: 40.5px;	
+	}
+
+	@include DESKTOP-N{
+		font-size: 36px;
+		letter-spacing: 0;
+		line-height: 40.5px;
+	}
+
+	@include DESKTOP-S{
+		font-size: 48rem;
+		letter-spacing: 0;
+		line-height: 54rem;
+	}
+}
+
+
+@mixin FONT-INDEX-TITLE-BIG(){
+	font-family: $FONT-BASE;
+	font-size: 64px;
+	line-height: 0;
+	line-height: 64px;
+
+	@include PHONE-N {
+		font-size: 36px;
+		letter-spacing: 0;
+		line-height: 36px;	
+	}
+	
+	@include TABLET-N {
+		font-size: 48px;
+		letter-spacing: 0.9px;
+		line-height: 48px;	
+	}
+
+	@include DESKTOP-N{
+		font-size: 48px;
+		letter-spacing: 0;
+		line-height: 48px;
+	}
+
+	@include DESKTOP-S{
+		font-size: 64rem;
+		letter-spacing: 0;
+		line-height: 64rem;
+	}
+}
+
+
+@mixin FONT-HEADER-PHONE(){
+	font-family: $FONT-BASE;
+	font-size: 32px;
+	line-height: 0;
+	line-height: 27px;
+
+	@include PHONE-N {
+		font-size: 24px;
+		letter-spacing: 0;
+		line-height: 20.25px;	
+	}
+	
+	@include TABLET-N {
+		font-size: 24px;
+		letter-spacing: 0.9px;
+		line-height: 20.25px;	
+	}
+
+	@include DESKTOP-N{
+		font-size: 24px;
+		letter-spacing: 0;
+		line-height: 20.25px;
+	}
+
+	@include DESKTOP-S{
+		font-size: 32rem;
+		letter-spacing: 0;
+		line-height: 27rem;
+	}
+}
+
+@mixin FONT-MENU(){
+	font-family: $FONT-BOLD;
+	font-size: 20px;
+	line-height: 0;
+	line-height: 24px;
+
+	@include PHONE-N {
+		font-size: 18px;
+		letter-spacing: 0.8px;
+		line-height: 18px;	
+	}
+	
+	@include TABLET-N {
+		font-size: 21px;
+		letter-spacing: 0.3px;
+		line-height: 24.93px;	
+	}
+
+	@include DESKTOP-N{
+		font-size: 15.75px;
+		letter-spacing: 0;
+		line-height: 18px;
+	}
+
+	@include DESKTOP-S{
+		font-size: 20rem;
+		letter-spacing: 0;
+		line-height: 24rem;
+	}
+}
+
+@mixin FONT-MENU_ACTIVE(){
+	font-family: $FONT-TITLE;
+	font-size: 20px;
+	letter-spacing: 0;
+	line-height: 24px;
+
+	@include PHONE-N {
+		font-size: 18px;
+		letter-spacing: 0.8px;
+		line-height: 18px;	
+	}
+	
+	@include TABLET-N {
+		font-size: 21px;
+		letter-spacing: -0.8px;
+		line-height: 24.93px;	
+	}
+
+	@include DESKTOP-N{
+		font-size: 15.75px;
+		letter-spacing: 0;
+		line-height: 18px;
+	}
+
+	@include DESKTOP-S{
+		font-size: 20rem;
+		letter-spacing: 0;
+		line-height: 24rem;
+	}
+}
+
+@mixin FONT-INDEX-TITLE-SUB(){
+	font-family: $FONT-BASE;
+	font-size: 24px;
+	line-height: 0;
+	line-height: 48px;
+
+	@include PHONE-N {
+		font-size: 18px;
+		letter-spacing: 0;
+		line-height: 36px;	
+	}
+	
+	@include TABLET-N {
+		font-size: 18px;
+		letter-spacing: 0;
+		line-height: 36px;	
+	}
+
+	@include DESKTOP-N{
+		font-size: 18px;
+		letter-spacing: 0;
+		line-height: 36px;
+	}
+
+	@include DESKTOP-S{
+		font-size: 24rem;
+		letter-spacing: 0;
+		line-height: 48rem;
+	}
+}
+
+@mixin FONT-CITY-TEXT(){
+	font-family: $FONT-BASE;
+	font-size: 24px;
+	line-height: 0;
+	line-height: 32px;
+
+	@include PHONE-N {
+		font-size: 16px;
+		letter-spacing: 0;
+		line-height: 24px;	
+	}
+	
+	@include TABLET-N {
+		font-size: 18px;
+		letter-spacing: 0;
+		line-height: 24px;	
+	}
+
+	@include DESKTOP-N{
+		font-size: 18px;
+		letter-spacing: 0;
+		line-height: 24px;
+	}
+
+	@include DESKTOP-S{
+		font-size: 24rem;
+		letter-spacing: 0;
+		line-height: 32rem;
+	}
+}
+
+@mixin FONT-BUTTON(){
+	font-family: $FONT-BOLD;
+	font-size: 14px;
+	line-height: 0;
+	line-height: 18px;
+
+	@include PHONE-N {
+		font-size: 15.75px;
+		letter-spacing: 0;
+		line-height: 20.25px;	
+	}
+	
+	@include TABLET-N {
+		font-size: 12px;
+		letter-spacing: 0;
+		line-height: 13.5px;	
+	}
+
+	@include DESKTOP-N{
+		font-size: 12px;
+		letter-spacing: 0;
+		line-height: 13.5px;
+	}
+
+	@include DESKTOP-S{
+		font-size: 14rem;
+		letter-spacing: 0;
+		line-height: 18rem;
+	}
+}
+
+@mixin FONT-MODAL-INPUT{
+	font-family: $FONT-BASE;
+	font-size: 16px;
+	letter-spacing: 0;
+	line-height: 21px;
+
+	@include PHONE-N{
+		font-size: 16px;
+		letter-spacing: 0;
+		line-height: 15.75px;
+	}
+
+	@include TABLET-N {
+		font-size: 16px;
+		letter-spacing: 0;
+		line-height: 15.75px;	
+	}
+
+	@include DESKTOP-N{
+		font-size: 16px;
+		letter-spacing: 0;
+		line-height: 15.75px;
+	}
+
+	@include DESKTOP-S{
+		font-size: 16rem;
+		letter-spacing: 0;
+		line-height: 21rem;
+	}
+}
+
+@mixin FONT-HEX-BUTTON{
+	font-family: $FONT-BOLD;
+	font-size: 20px;
+	letter-spacing: 0;
+	line-height: 18.14px;
+
+	@include PHONE-N{
+		font-size: 14.25px;
+		letter-spacing: 0;
+		line-height: 13.5px;
+	}
+
+	@include TABLET-N {
+		font-size: 14.25px;
+		letter-spacing: 0;
+		line-height: 13.5px;	
+	}
+
+	@include DESKTOP-N{
+		font-size: 14.25px;
+		letter-spacing: 0;
+		line-height: 13.5px;
+	}
+
+	@include DESKTOP-S{
+		font-size: 20rem;
+		letter-spacing: 0;
+		line-height: 18.14rem;
+	}
+}
+
+@mixin FONT-CONTENT-TEXT{
+	font-family: $FONT-BASE;
+	font-size: 18px;
+	letter-spacing: 0;
+	line-height: 27px;
+
+	@include PHONE-N{
+		font-size: 14px;
+		letter-spacing: 0;
+		line-height: 20.25px;
+	}
+
+	@include TABLET-N {
+		font-size: 14px;
+		letter-spacing: 0;
+		line-height: 20.25px;	
+	}
+
+	@include DESKTOP-N{
+		font-size: 14px;
+		letter-spacing: 0;
+		line-height: 20.25px;
+	}
+
+	@include DESKTOP-S{
+		font-size: 18rem;
+		letter-spacing: 0;
+		line-height: 27rem;
+	}
+}
+
+@mixin FONT-R-DEALER-TITLE{
+	font-family: $FONT-TITLE;
+	font-size: 18px;
+	letter-spacing: 0;
+	line-height: 27px;
+
+	@include PHONE-N{
+		font-size: 14px;
+		letter-spacing: 0;
+		line-height: 20.25px;
+	}
+
+	@include TABLET-N {
+		font-size: 14px;
+		letter-spacing: 0;
+		line-height: 20.25px;	
+	}
+
+	@include DESKTOP-N{
+		font-size: 14px;
+		letter-spacing: 0;
+		line-height: 20.25px;
+	}
+
+	@include DESKTOP-S{
+		font-size: 18rem;
+		letter-spacing: 0;
+		line-height: 27rem;
+	}
+}
+
+@mixin FONT-LANGS{
+	font-family: $FONT-BOLD;
+	font-size: 14px;
+	letter-spacing: 0;
+	line-height: 22px;
+
+	@include PHONE-N{
+		font-size: 12px;
+		letter-spacing: 0;
+		line-height: 13.5px;
+	}
+
+	@include TABLET-N {
+		font-size: 10.5px;
+		letter-spacing: 0;
+		line-height: 13.5px;	
+	}
+
+	@include DESKTOP-N{
+		font-size: 12px;
+		letter-spacing: 0;
+		line-height: 13.5px;
+	}
+
+	@include DESKTOP-S{
+		font-size: 14rem;
+		letter-spacing: 0;
+		line-height: 22rem;
+	}
+}
+
+@mixin FONT-INDEX-TITLE-SUP{
+	font-family: $FONT-BOLD;
+	font-size: 16px;
+	letter-spacing: 0;
+	line-height: 18px;
+
+	@include PHONE-N{
+		font-size: 12px;
+		letter-spacing: 0;
+		line-height: 13.5px;
+	}
+
+	@include TABLET-N {
+		font-size: 12px;
+		letter-spacing: 0;
+		line-height: 13.5px;	
+	}
+
+	@include DESKTOP-N{
+		font-size: 12px;
+		letter-spacing: 0;
+		line-height: 13.5px;
+	}
+
+	@include DESKTOP-S{
+		font-size: 16rem;
+		letter-spacing: 0;
+		line-height: 18rem;
+	}
+}
+
+@mixin FONT-DOWNLOAD{
+	font-family: $FONT-BASE;
+	font-size: 14px;
+	letter-spacing: 0;
+	line-height: 27px;
+
+	@include PHONE-N{
+		font-size: 12px;
+		letter-spacing: 0;
+		line-height: 12px;
+	}
+
+	@include TABLET-N {
+		font-size: 14px;
+		letter-spacing: 0;
+		line-height: 28.05px;	
+	}
+
+	@include DESKTOP-N{
+		font-size: 10.5px;
+		letter-spacing: 0;
+		line-height: 20.25px;
+	}
+
+	@include DESKTOP-S{
+		font-size: 14rem;
+		letter-spacing: 0;
+		line-height: 27rem;
+	}
+}
+
+@mixin FONT-WARNING-TEXT{
+	font-family: $FONT-BASE;
+
+	@include PHONE-N{
+		font-size: 12px;
+		letter-spacing: 0;
+		line-height: 20.25px;
+	}
+
+	@include TABLET-N {
+		font-size: 12px;
+		letter-spacing: 0;
+		line-height: 20.25px;	
+	}
+
+	@include DESKTOP-N{
+		font-size: 12px;
+		letter-spacing: 0;
+		line-height: 20.25px;
+	}
+}
+
+@mixin FONT-DONLOAD-R-DELER{
+	font-family: $FONT-BASE;
+	font-size: 14px;
+	letter-spacing: 0;
+	line-height: 21px;
+
+	@include PHONE-N{
+		font-size: 12px;
+		letter-spacing: 0;
+		line-height: 15.75px;
+	}
+
+	@include TABLET-N {
+		font-size: 11px;
+		letter-spacing: 0;
+		line-height: 15.75px;	
+	}
+
+	@include DESKTOP-N{
+		font-size: 11px;
+		letter-spacing: 0;
+		line-height: 15.75px;
+	}
+
+	@include DESKTOP-S{
+		font-size: 14rem;
+		letter-spacing: 0;
+		line-height: 21rem;
+	}
+}
+
+@mixin FONT-FOOTER{
+	font-family: $FONT-BASE;
+	font-size: 12px;
+	letter-spacing: 0;
+	line-height: 12px;
+
+	@include PHONE-N{
+		font-size: 10px;
+		letter-spacing: 0;
+		line-height: 12px;
+	}
+
+	@include TABLET-N {
+		font-size: 12px;
+		letter-spacing: 0;
+		line-height: 12px;	
+	}
+
+	@include DESKTOP-N{
+		font-size: 9px;
+		letter-spacing: 0;
+		line-height: 10px;
+	}
+
+	@include DESKTOP-S{
+		font-size: 12rem;
+		letter-spacing: 0;
+		line-height: 12rem;
+	}
+}

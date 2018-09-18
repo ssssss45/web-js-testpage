@@ -1,0 +1,116 @@
+.wrapper{
+	display: block;
+	margin: auto;
+	height: auto;
+    min-height: calc(100vh - #{$BORDER-DESKTOP});
+	box-sizing: border-box;
+	border: $BORDER-DESKTOP solid #ffffff;
+	position: relative;
+	background: #f9f9f8;
+	// min-height: 780px;
+	// overflow-x: hidden;
+	
+	@include font( $FONT-BASE );
+	
+	@include PHONE-N{
+ 	    width: 100%;
+	    border: $BORDER-PHONE solid #ffffff;
+	    box-sizing: border-box;
+	    position: relative;
+		min-height: 100vh;
+	    .page_index &{
+	    	height: 100vh;
+	    }
+	}
+
+	@include TABLET-N{
+		border: $BORDER-TABLET solid #ffffff;
+        min-height: 100vh;
+		overflow-x: hidden;
+	}
+
+	
+	@include DESKTOP-N{
+		border: $BORDER-TABLET solid #ffffff;
+		height: auto;
+		width: 100%;
+		min-height: 100vh;
+		overflow-x: hidden;
+	}
+
+	@include DESKTOP-S{
+		border: $BORDER-DESKTOP-REM solid #ffffff;
+		min-height: 100vh;
+		height: 100%;
+	}
+
+	@include LARGE{
+		width: auto;
+		height: 100%;
+		min-height: 100vh;
+		// min-height: 815px;
+	}
+
+}
+
+/*
+.wrapper_overflow{
+	width: 1600px;
+	height: 100vh;
+	display: block;
+	overflow: hidden;
+
+	@include DESKTOP-N{
+		width: 1024px;
+	}
+}
+*/
+
+.wrapper_min-height{
+
+	@include DESKTOP-N{
+		min-height: 675px;
+		height: 100vh;
+		overflow: hidden;//
+	}
+	
+	@include DESKTOP-S{
+		min-height: 100vh;
+		height: auto;
+	}
+
+	@include LARGE{
+		min-height: 675px;
+		height: 100vh;
+		min-height: 826px;
+	}
+
+	@include TABLET-N{
+		overflow-x: hidden;
+	}
+	
+}
+
+.wrapper_min-height-city{
+	@include DESKTOP-N{
+		min-height: 675px;
+		height: 100vh;
+		overflow: hidden;//
+	}
+	
+	@include DESKTOP-S{
+		// min-height: 100vh;
+		min-height: 850rem;
+		height: auto;
+	}
+
+	@include LARGE{
+		min-height: 675px;
+		height: 100vh;
+		min-height: 826px;
+	}
+
+	@include TABLET-N{
+		overflow-x: hidden;
+	}
+}

@@ -1,0 +1,145 @@
+.index-part {
+    display: block;
+    width: auto;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+	background-color: #F9F9F8;
+
+	top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: auto;
+    position: absolute;
+
+    canvas{
+    	position: absolute;
+    	bottom: 0;
+    	left: 0;
+    }
+
+    @include TABLET-N{
+    	padding-top: 118px;
+    }
+
+    @include PHONE-N{
+	    height: auto;
+	    margin: 0;
+	    display: block;
+
+	    bottom: 0;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    position: relative;
+	    font-size: 0;
+
+	    canvas{
+	    	bottom: 0;
+		    top: auto;
+		    left: 0;
+		    right: 0;
+		    margin: auto;
+		    width: 100%;
+	    }
+    }
+
+    @include DESKTOP-N {
+    }
+
+}
+
+.index-part__title{
+	width: 670px;
+	display: block;
+	margin: 193px auto 0;
+
+	@include PHONE-N{
+		width: 100%;
+		margin: 0;
+	    padding: 0 0 35%;
+	}
+
+	@include TABLET_N{
+		// margin: 45px auto 0;
+
+	    display: block;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    height: 300px;
+	    margin: auto;
+	}
+
+	@include DESKTOP-N{
+		margin: 145px auto 0;
+	}
+
+	@include DESKTOP-S{
+		margin: 193rem auto 0;
+	}
+}
+
+.index-part__title_sup{
+	padding: 15px 0;
+    position: relative;
+    color: $active;
+    @include FONT-INDEX-TITLE-SUP();
+
+    &:after {
+	    content: "";
+	    display: block;
+	    clear: both;
+	    position: absolute;
+	    width: 45px;
+	    height: 1px;
+	    bottom: 0;
+	    left: 0;
+	    margin: auto;
+	    right: 0;
+	    background: #d6d0d1;
+	}
+
+	@include TABLET-N{
+		padding: 11px 0;
+	}
+}
+
+
+.index-part__title_big{
+	
+	overflow: hidden;
+
+	p{
+		position: relative;
+		// @include font( $FONT-BASE, 64px, 1 );
+		color: $sdark;
+
+		@include FONT-INDEX-TITLE-BIG();
+	}
+	
+
+	@include TABLET-N{
+		width: 500px;
+		margin: auto;
+	}
+
+	@include PHONE-N{	    
+	    width: 280px;
+    	margin: auto;
+	}
+}
+
+.index-part__title_sub{
+	
+	position: relative;
+
+	@include font( $FONT-BASE, 24px, 3 );
+	color: $sdark;
+	// padding: 12px 0;
+	@include FONT-INDEX-TITLE-SUB();
+}

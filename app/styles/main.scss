@@ -1,0 +1,50 @@
+// @import "constants";
+// @import "functions";
+// @import "mixins";
+@import "reset.css";
+
+// @import "../components/global/global";
+@import "../components/constants/constants"; 
+@import "../components/fonts/fonts"; 
+@import "../components/adaptive/adaptive";
+// @import "../components/gui/gui";
+@import "../components/page/page";
+@import "../components/orientation-warning/orientation-warning";
+@import "../components/mixins/mixins";
+
+
+@import "../components/wrapper/wrapper";
+@import "../components/fade/fade";
+@import "../components/header/header";
+@import "../components/menu-inner/menu-inner";
+@import "../components/links-button/links-button";
+@import "../components/column-item/column-item";
+
+@import "../components/index-part/index-part";
+
+// @import "../components/city-tab/city-tab";
+
+
+@import "../components/page-title/page-title";
+@import "../components/content-part/content-part";
+@import "../components/content-part-column/content-part-column";
+@import "../components/contact/contact";
+
+@import "../components/dealer-part/dealer-part";
+@import "../components/dealer-part-item/dealer-part-item";
+
+@import "../components/inner-part/inner-part";
+
+
+@import "../components/modal/modal";
+
+@import "../components/button/button";
+// @import "../components/input/input";
+@import "../components/link/link";
+
+@import "../components/langs/langs";
+@import "../components/hex-button/hex-button";
+
+html{
+	font-size: 0.06vw;
+}

@@ -1,0 +1,16 @@
+.fade {
+
+	@include PHONE-N{
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    margin: auto;
+	    height: 150px;
+	    z-index: 40;
+	    background: linear-gradient(to top, rgba(256,256,256,0), #f9f9f8);
+	    pointer-events: none;
+        border: 10px solid #fff;
+    	border-bottom: none;
+	} 
+}

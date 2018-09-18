@@ -1,0 +1,129 @@
+.langs {
+
+    display: inline-block;
+    
+    position: relative;
+    width: 35px;
+
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase;
+    vertical-align: top;
+    color: $sdark;
+
+    @include FONT-LANGS();
+	
+	cursor: pointer;
+
+	p{
+		text-align: left;
+		// vertical-align: top;
+	}
+
+	&:after {
+	    content: "";
+	    width: 12px;
+	    height: 100%;
+	    // background-color: red;// !!!
+	    display: inline-block;
+	    clear: both;
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	    margin-top: -1px;
+	    background: url("../images/dropdown.svg") no-repeat center;
+	    background-size: contain;
+        z-index: 2;
+
+        transition: .2s transform, .2s top;
+	}
+	
+	@include PHONE-N {
+
+	    // line-height: $PHONE-H_PHONE;
+	    margin-top: $PHONE-PT_PHONE;
+		width: 30px;
+
+	    &:after{
+		    width: 8px;
+	    }
+	}
+	
+	@include TABLET-N {
+
+	    // font-size: 12px;
+	    // line-height: $PHONE-H_TABLET;
+		width: 30px;
+
+	    &:after{
+	    	width: 8px;
+	    }
+	}
+
+	@include DESKTOP-N {
+
+		// font-size: 12px;
+	 //    line-height: $PHONE-H_TABLET;
+	    width: 30px;
+
+	    &:after{
+	    	width: 8px;
+	    }
+	}
+
+	@include DESKTOP-S {
+		// font-size: 14rem;
+		// line-height: $PHONE-H_TABLET_REM;
+		&:after{
+	    	width: 12rem;
+	    }
+
+	}
+
+}
+
+$lang-item_pl: 14px;
+$lang-item_pb: 14px;
+
+.langs__items {
+    padding: $lang-item_pb 30px $lang-item_pb $lang-item_pl;
+    background: #fdfdfd;
+    position: absolute;
+    top: - $lang-item_pl;
+    left: - $lang-item_pb;
+    z-index: 1;
+    display: none;
+   
+    @include PHONE-N{
+	    top: auto;
+	    bottom: - $lang-item_pb;
+    	left: - $lang-item_pl;
+    }
+}
+
+.langs__item {
+    
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+	width: 16px;
+	
+    &:hover{
+        opacity: 0.8;
+    }
+
+    &:nth-of-type(3){
+        margin-bottom: 0;
+    }
+}
+
+.langs_active{
+	
+	&:after {
+	   	transform: scale(1,-1);
+	}
+
+	.langs__items{
+		display: block;
+	}
+}

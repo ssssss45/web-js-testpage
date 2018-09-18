@@ -1,0 +1,72 @@
+.links-button{
+    
+    display: block;
+    border: 1px solid transparent;
+    width: 246px;
+    height: 40px;
+    position: absolute;
+    right: 0px;
+    transition: all 0.2s;
+    margin-top: 10px;
+    top: 49px;
+    
+    pointer-events: auto;
+
+    .button__text{
+        line-height: 40px;
+    }
+
+    @include TABLET-N{
+    	width: 183px;
+    	height: 32px;
+        bottom: 0;
+        margin: 0;
+        margin-top: 0;
+
+        .button__text{
+            line-height: 32px;
+        }
+    }
+
+    @include PHONE-N{
+	    right: 0;
+	    top: 0;
+	    left: 0;
+	    bottom: auto;
+	    margin: auto;
+	    height: 32px;
+        line-height: 32px;
+
+        .button__text{
+            line-height: 32px;
+        }
+    }
+
+    @include DESKTOP-N{
+        display: block;
+        border: 1px solid transparent;
+        width: 182px;
+        height: 30px;
+        position: absolute;
+        font-weight: 900;
+        transition: all 0.2s;
+        margin-top: 0;
+        line-height: 32px;
+
+        .button__text{
+            line-height: 32px;
+        }
+    }
+
+    @include DESKTOP-S{
+        width: 246rem;
+        height: 40rem;
+        margin-top: 10rem;//
+        top: 49rem;
+
+        .button__text{
+            line-height: 40rem;
+        }
+    }
+
+} 

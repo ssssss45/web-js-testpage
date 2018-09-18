@@ -1,0 +1,202 @@
+.column-item {
+    display: inline-block;
+    vertical-align: top;
+    padding: 28px 0 0;
+    position: relative;
+    color: $sdark;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: 0.4px;
+    width: $CONT-P-COL;
+    margin-right: 122px;
+
+    &:before{
+    	content: '';
+    	display: block;
+    	clear: both;
+    	width: 100%;
+    	height: 1px;
+    	background: #ddd9db;
+    	position: absolute;
+    	top: 0;
+    }
+
+    h5 {
+	    font-size: 18px;
+	    line-height: 21px;
+	    display: block;
+	    width: 100%;
+	    font-family: $fnd;
+	    color: $sdark;
+	    margin-bottom: 15px;
+	}
+	
+	@include PHONE-N {
+		
+		display: block;
+		width: 100%;
+		font-size: 14px;
+		line-height: 18px;
+		padding: 20px 0;
+
+		h5{
+			width: 100%;
+			font-size: 18px;
+			line-height: 1;
+		    margin-bottom: 12px;
+		}
+
+	}
+
+	@include TABLET-N {
+		width: #{$CONT-P-COL - 116px};
+	    padding: 21px 0 0;
+	    font-size: 12px;
+	    line-height: 17px;
+	    margin-right: 42px;
+
+	    h5{
+	    	font-size: 14px;
+	    	line-height: 15px;
+	    	letter-spacing: 0.35px;
+	    	margin-bottom: 20px;
+	    }
+	}
+
+	@include DESKTOP-N {
+		width: #{$CONT-P-COL - 75px};
+		padding: 22px 0 0px;
+		line-height: 15px;
+		font-size: 12px;
+		letter-spacing: 0.4px;
+		margin-right: 100px;
+
+
+		h5{
+			font-size: 14px;
+		    line-height: 1.15;
+		    margin-bottom: 6px;
+		}
+	}
+
+	@include DESKTOP-S {
+    	
+        display: inline-block;
+        @include font-base_s();
+
+        // font-size: 16rem;
+        line-height: 25rem;
+        
+        padding: 28rem 0 0rem;
+        width: $CONT-P-COL-REM;
+    	margin-right: 122rem;
+
+		h5{
+			// font-size: 18rem;
+	    	// line-height: 21rem;
+            @include font-base_s( 16px, 2, .55px, 21px );
+			width: 100%;
+    		margin-bottom: 15rem;
+		}
+	}
+}
+
+.column-item_big {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+    line-height: 24px;
+    color: $sdark;
+    letter-spacing: 0.25px;
+    width: $CONT-P-COL-BIG;
+    padding: 0;
+    margin: 0;
+    margin-top: -5px;
+
+    // 636 - 500
+
+    h5{
+        display: none;
+    }
+
+    &:before{
+    	display: none;
+    }
+
+    p{
+    	margin-bottom: 9px;
+    }
+	
+	@include PHONE-N {
+        width: 100%;
+        display: block;
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 0.35px;
+
+        p{
+        	margin-bottom: 10px;
+        	line-height: 18px;
+		    font-size: 12px;
+        }
+    }
+
+    @include TABLET-N {
+        position: relative;
+        font-size: 12px;
+        line-height: 20px;
+        width: #{$CONT-P-COL-BIG - 262px};
+        margin-top: -5px;
+        margin-right: 0;
+        padding: 0;
+
+        p{
+        	margin-bottom: 6px;
+		    line-height: 18px;
+		    font-size: 12px;
+        }
+    }
+
+    @include DESKTOP-N {
+        font-size: 12px;
+        line-height: 20px;
+        width: 500px;
+        letter-spacing: 0.35px;
+        margin-top: -5px;
+        margin-right: 0;
+        padding: 0;
+
+        p{
+    	    margin-bottom: 6px;
+		    line-height: 18px;
+		    font-size: 12px;
+        }
+    }
+
+    @include DESKTOP-S {
+        width: $CONT-P-COL-BIG-REM;
+        @include font-base_s( 16px, 2, .55px, 21px );
+        // font-size: 16rem;
+        // line-height: 24rem;
+        // letter-spacing: 0.25rem;
+        margin-top: -5rem;
+        padding: 0;
+
+        p{
+        	margin-bottom: 9rem;
+        }
+    }
+
+}
+
+.column-item__name{
+	display: inline-block;
+	width: auto;
+
+}
+
+.column-item__name_opacity{
+	color: #a49a9c;
+	width: auto;
+	display: inline;
+}

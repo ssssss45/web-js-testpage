@@ -1,0 +1,594 @@
+/*
+███╗   ███╗███████╗███╗   ██╗██╗   ██╗      ██╗███╗   ██╗███╗   ██╗███████╗██████╗ 
+████╗ ████║██╔════╝████╗  ██║██║   ██║      ██║████╗  ██║████╗  ██║██╔════╝██╔══██╗
+██╔████╔██║█████╗  ██╔██╗ ██║██║   ██║█████╗██║██╔██╗ ██║██╔██╗ ██║█████╗  ██████╔╝
+██║╚██╔╝██║██╔══╝  ██║╚██╗██║██║   ██║╚════╝██║██║╚██╗██║██║╚██╗██║██╔══╝  ██╔══██╗
+██║ ╚═╝ ██║███████╗██║ ╚████║╚██████╔╝      ██║██║ ╚████║██║ ╚████║███████╗██║  ██║
+╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝ ╚═════╝       ╚═╝╚═╝  ╚═══╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝
+
+*/
+
+
+$menu-w_tablet: 317px; $menu-w_desktop: 250px;
+$menu-shadow-w_tablet: 30px; $menu-shadow-w_desktop: 20px;
+
+$list-p_desktop: 40px;
+
+.menu-inner{
+	position: absolute;
+	width: 292px;
+	top: 0;
+	right: 0;
+	height: 100%;
+
+	pointer-events: none;
+	user-select: none;
+	
+	z-index: $Z-MENU;
+	
+
+	@include PHONE-N{
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		overflow-x: hidden;
+	}
+	
+	@include TABLET-N {
+	    width: $menu-w_tablet + $menu-shadow-w_tablet;
+	}
+	
+	@include DESKTOP-N {
+		width: $menu-w_desktop + $menu-shadow-w_desktop;
+	}
+
+	@include DESKTOP-S {
+		width: $MENU-INNER-WEDTH-REM;
+	}
+
+}
+
+@mixin _shadow( $w ){
+	content: "";
+	position: absolute;
+	top: 0;
+	left: - $w;
+	
+	width: $w;
+	height: 100%;
+	z-index: $Z-MENU;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.2+99 */
+	background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 99%, rgba(0,0,0,0.2) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 99%,rgba(0,0,0,0.2) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.2) 99%,rgba(0,0,0,0.2) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#33000000',GradientType=1 ); /* IE6-9 */
+
+}
+
+.menu-inner__wrapper{
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    
+    background: #f2f1f1;
+    transition: .2s right;
+    pointer-events: auto;
+
+    .links-button{
+	    position: relative;
+	    right: 0;
+	    width: 100%;
+	    height: 34px;
+	    top: auto;
+	    margin: 27px auto;
+
+		.button__text{
+			line-height: 32px;
+		}
+
+   		@include PHONE-N{
+   			margin: 20px auto 0;
+   			width: 270px;
+   			height: 41px;
+
+   			.button__text{
+				line-height: 41px;
+			}
+   		}
+
+   		@include TABLET-N{
+   			margin: 0 auto;
+   			width: 100%;
+   		}
+
+   		@include DESKTOP-N{
+			right: 0;
+			margin: 27px auto;
+			width: 100%;
+   		}
+
+   		@include DESKTOP-S{
+   			width: 100%;
+   			margin: 27rem auto;
+
+   			.button__text{
+				line-height: 32rem;
+			}
+   		}
+	}
+
+
+	.page_index &{
+		display: none;
+	}
+
+	@include PHONE-N {
+		z-index: $Z-MENU;
+
+		position: fixed;
+		right: -100vw;
+		width: 100%;
+	    min-height: 100vh;
+	    height: auto;	 
+	    border: $BORDER-PHONE solid #fff;
+	    box-sizing: border-box;
+
+		.page_index &{
+			display: block;
+		}
+
+		position: absolute;
+		position: relative;
+
+	}
+
+	@include TABLET-N {
+	    z-index: $Z-MENU;
+	    right: -120%;
+	    width: $menu-w_tablet;
+
+		.page_index &{
+			display: none;
+		}
+
+		&:before{
+			@include _shadow( $menu-shadow-w_tablet );
+		}
+	}
+	
+	@include DESKTOP-N {
+	    right: -120%;
+		width: $menu-w_desktop;
+		z-index: $Z-MENU;
+	    height: 100%;
+
+		.page_index &{
+			display: none;
+		}
+
+		&:before{
+			@include _shadow( $menu-shadow-w_desktop );
+		}
+
+	}
+
+	@include DESKTOP-S{
+		z-index: 0;
+		right: 0;
+		width: 292rem;
+	}
+
+}
+
+.menu-inner_visible{
+	
+	.menu-inner__wrapper{
+	   
+	    @include PHONE-N {
+	    	right: 0;
+		}
+
+		@include TABLET-N {
+			right: 0;
+		}
+
+		@include DESKTOP-N {
+			right: 0;	
+		}
+
+	}
+
+}
+
+
+.menu-inner__button-close{
+	width: 22px;
+	height: 22px;
+	position: absolute;
+	top: 13px;
+	right: 13px;
+	background: url("../images/close.svg") no-repeat center;
+	display: none;
+	z-index: 55;
+	transition: opacity 0.3s;
+	
+	cursor: pointer;
+	pointer-events: auto;
+
+	&:hover{
+		opacity: 0.5;
+	}
+
+	@include PHONE-N{
+		display: block;
+		top: 12px;
+		right: 14px;
+	}
+	@include TABLET-N{
+		display: block;
+		top: 45px;
+		right: 38px;
+	}
+	@include DESKTOP-N{
+		display: block;
+	}
+}
+
+
+.menu-inner__list{
+	display: block;
+	padding: 57px 56px;
+
+	@include PHONE-N{
+	    padding: 0;
+	    width: 270px;
+	    margin: 24px auto 0;
+	}
+
+	@include DESKTOP-N {
+		padding: $list-p_desktop $list-p_desktop $list-p_desktop 44px;
+	}
+
+	@include DESKTOP-S {
+		padding: 57rem 56rem;
+	}
+}
+
+.menu-inner__item{
+	display: block;
+    margin: 27px 0;
+	opacity: 1;
+	transition: opacity 0.3s;
+
+	@include FONT-MENU();
+
+	cursor: pointer;
+	pointer-events: auto;
+
+	&:nth-of-type(1){
+		margin-top: 0;
+	}
+
+	&:hover{
+		opacity: 0.5;
+	}
+
+	a{
+		color: $sdark;
+		text-decoration: none;
+	}
+
+	@include PHONE-N{
+	    margin: 12px 0 28px;
+	}
+
+	@include TABLET-N{
+	    margin-bottom: 23px;
+	}
+
+	@include DESKTOP-N{
+    	margin-bottom: 23px;
+	}
+
+	@include DESKTOP-S{
+	    margin: 25rem 0;
+	}
+
+}
+
+.menu-inner__item_choosed{
+	// font-weight: 900;
+	position: relative;
+	opacity: 0.5;
+	display: inline-block;
+	margin:  0;
+	@include FONT-MENU_ACTIVE();
+
+	&:after {
+	    content: "";
+	    display: block;
+	    clear: both;
+	    width: 104%;
+	    height: 10px;
+	    background: #4c3440;
+	    position: absolute;
+	    bottom: 0;
+	    opacity: 0.2;
+	    left: -2%;
+	}
+
+	@include DESKTOP-S{
+		margin: 0;
+		
+		&:after{
+			height: 10rem;
+		}
+	}
+
+	@include TABLET-N{
+		margin: 0;
+
+		&:nth-last-of-type(1){
+			margin-bottom: 23px;
+		}
+	}
+
+	@include PHONE-N{
+		margin-bottom: 16px;
+		margin-top: -12px;
+	}
+
+	@include DESKTOP-N{
+		margin-bottom: 0;
+	}
+}
+
+
+.menu-inner__item-line {
+    width: 66px;
+    height: 1px;
+    cursor: auto;
+    background: #d7d3d5;
+    margin: 38px 0;
+
+    @include PHONE-N{
+    	margin: 28px 0;
+    }
+
+    @include DESKTOP-N{
+    	margin: 23px 0;
+    }
+
+    @include DESKTOP-S{
+    	width: 66rem;
+    	margin: 38rem 0 34rem;
+    }
+}
+
+.menu-inner__download{
+	
+	display: block;
+	width: 100%;
+	height: auto;
+	background: #f8f7f7;
+    bottom: 0;
+    top: auto;
+    box-sizing: border-box;
+    padding: 33px 0 33px 56px;
+    position: absolute;
+	
+	pointer-events: auto;
+    text-decoration: none;
+
+    @include PHONE-N{
+	    display: block;
+	    position: relative;
+	    width: $MENU-INNER-PHONE-W;
+	    height: auto;
+	    background: transparent;
+        margin: 5px auto;
+        padding: $MENU-INNER-PHONE - 5px 0;
+    }
+
+    @include TABLET-N {
+    	position: absolute;
+    	bottom: 0;
+    }
+
+    @include DESKTOP-S {
+	    margin: 0;
+    	padding: 33rem 0 33rem 56rem;
+    	position: absolute;
+    	bottom: 0;
+    	height: 134rem;
+    	text-align: left;
+    } 
+
+    @include DESKTOP-N {
+    	padding: 25px $list-p_desktop;
+    	height: auto;
+    	background: #f8f7f7;
+    	margin: 0 0 0;
+    	position: absolute;
+    	bottom: 0;
+    }
+}
+
+.menu-inner__download-button {
+    display: block;
+    width: 100%;
+    height: 36px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+
+    &:hover{
+    	opacity: 0.7;
+    }
+
+    @include PHONE-N{
+    	display: inline-block;
+	    width: 55%;
+	    vertical-align: top;
+    }
+
+    @include DESKTOP-N{
+    	height: 24px;
+    	background-size: contain;
+    }
+
+     @include DESKTOP-S{
+    	height: 36rem;
+    	background-size: contain;
+    }
+}
+
+.menu-inner__download-button-img{
+	display: inline-block;
+	vertical-align: middle;
+	height: 36px;
+	width: 33px;
+	background: url("../images/iconpdf.png") no-repeat center;
+	background-size: contain;
+	margin-right: 15px;
+	user-select: none;
+
+	@include DESKTOP-S{
+		width: 36rem;
+		height: 36rem;
+		margin-right: 15rem;
+	}
+
+	@include DESKTOP-N{
+		height: 24px;
+		height: 22px;
+		margin-right: 10px;
+	}
+	@include PHONE-N{
+		width: 30px;
+		height: 34px;
+	}
+
+	@include TABLET-N{
+		width: 30px;
+		height: 36px;
+		margin-right: 10px;
+	}
+}
+.menu-inner__download-button-text{
+	width: auto;
+    height: 22px;
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    color: $sdark;
+    border-bottom: 1px dashed;
+
+    @include FONT-DOWNLOAD();
+
+    @include DESKTOP-S{
+    	height: 22rem;
+		width: auto;
+    }
+
+    @include DESKTOP-N{
+    	height: auto;
+    }
+
+    @include TABLET-N{
+    	width: auto;
+    	height: auto;
+    }
+
+    @include PHONE-N{
+		width: 70px;
+		height: auto;
+    }
+}
+
+.menu-inner__footer{
+	
+    // @include font( $FONT-BASE, 12px, 12px);
+    text-align: left;
+    width: 100%;
+    color: $sdark;
+    text-decoration: none;
+    margin-top: 14px;
+
+    @include FONT-FOOTER();
+
+    @include PHONE-N {
+    	display: inline-block;
+	    width: 40%;
+	    vertical-align: top;
+	    text-align: left;
+	    margin-top: 4px;
+    }
+
+	@include TABLET-N {
+		margin-top: 10px;
+	}
+
+    @include DESKTOP-N {
+    	margin-top: 10px;
+    }
+
+    @include DESKTOP-S {
+    	width: auto;
+    	margin-top: 14rem;
+    }
+}
+
+.menu-inner__footer-link{
+	
+	@include font( $FONT-BASE, 12px, 12px);
+    text-align: left;
+    width: 100%;
+    color: $sdark;
+    text-decoration: none;
+
+    @include PHONE-N {
+    	display: inline-block;
+	    width: 100%;
+	    vertical-align: middle;
+	    font-size: 10px;
+	    line-height: 12px;
+	    text-align: left;
+    }
+
+	@include TABLET-N {
+	}
+
+    @include DESKTOP-N {
+    	font-size: 10px;
+    	line-height: 10px;
+    }
+
+    @include DESKTOP-S {
+    	font-size: 12rem;
+		line-height: 12rem;
+    	width: auto;
+    }
+}
+
+// FOR MAC
+.mac{
+	.menu-inner__item{
+		font-weight: 100;
+	}
+	.menu-inner__item_choosed{
+		font-weight: 100;
+	}
+}
+
+.ie11{
+	.menu-inner__item{
+		font-weight: 100;
+	}
+	.menu-inner__item_choosed{
+		font-weight: 100;
+	}
+}
+

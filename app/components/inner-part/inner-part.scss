@@ -1,0 +1,379 @@
+.inner-part{
+	width: auto;
+    display: block;
+    margin:$MARGIN-PART;
+    min-height: 615px;
+
+	@include PHONE-N {
+	    display: block;
+	    width: 100%;
+	    height: auto;
+	    padding: 0 $PADDING-HEADER-PHONE 75px;
+	    box-sizing: border-box;
+	    margin: 0;
+	}
+
+	@include TABLET-N {
+		display: block;
+    	width: 100%;
+	    height: auto;
+	    margin: 0 auto;
+	}
+
+	@include DESKTOP-N {
+		width: 925px;
+	    display: block;
+	    margin: 0 auto;
+	}
+
+	@include DESKTOP-S {
+	    width: auto;
+	    display: block;
+	    margin: $MARGIN-PART-REM;
+	    min-height: 595rem;
+	}
+}
+
+.inner-part__title {
+    display: block;
+    text-align: left;
+    margin-bottom: 46px;
+    color: $sdark;
+
+    @include FONT-CONTENT-TITLE();
+
+    
+
+    @include DESKTOP-N {
+	    margin-bottom: 34px;
+    }
+
+    @include DESKTOP-S{
+    	margin-bottom: 46rem;
+    	@include font-base_s( $min-font:48px, $add:2, $ls:.55px);
+    }
+}
+
+.inner-part__image{
+	position: relative;
+    width: 37.8%;
+    height: 77vh;
+	display: inline-block;
+	vertical-align: middle;
+	
+	img{
+		position: absolute;
+        left: -100%;
+        right: -100%;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        
+		max-width: 100%;
+    	height: auto;
+    	max-height: 100%;
+	}
+
+	@include PHONE-N {
+		display: block;
+	    z-index: 1;
+	    top: 0;
+	    width: 100%;
+	    height: 350px;
+        background-size: contain;
+	}
+	
+	@include TABLET-N {
+	    display: block;
+	    width: 468px;
+	    height: auto;
+	    background-size: contain;
+	    position: relative;
+	    margin: 46px auto;
+	    
+	    img{
+	    	position: relative;
+	    	margin: auto;
+	    	left: 0;
+	    }
+	}
+
+	@include DESKTOP-N {
+	    width: 341px;
+	    display: inline-block;
+	    vertical-align: middle;
+	    height: 415px;
+	    float: none;
+	    margin-top: 20px;
+	}
+
+	@include DESKTOP-S {
+		width: 30%;
+	    background-size: contain;
+	    height: 70vh;
+
+	    img{
+	    	max-width: 110%;
+	    }
+	}
+}	
+
+
+.inner-part__link{
+	color: $sdark;
+	position: relative;
+
+	&:after{
+		content: '';
+		display: inline-block;
+		clear: both;
+		background: url("../images/arrow.svg") no-repeat center;
+	    width: 12px;
+	    height: 2px;
+	    vertical-align: middle;
+	    margin-left: 5px;
+        background-size: contain;
+	}
+}
+
+// для миксинов!!! //
+
+.inner-part-content{
+
+	width: 610px;
+	display: inline-block;
+	vertical-align: middle;
+	height: auto;
+    margin: 50px 0 50px 57px ;
+	padding: 0;
+	// @include font( $FONT-BASE, 18px, 25px );
+
+	// letter-spacing: 0.47px;
+	color: $sdark;
+
+	@include FONT-CONTENT-TEXT();
+
+	ul{
+	
+		padding-bottom: 2px;
+
+		li{
+		    
+			list-style-type: none;
+		    
+		    position: relative;
+		    padding-left: 60px;
+		    margin-bottom: 22px;
+		    box-sizing: border-box;
+		    
+
+			&:before{
+			    content: "";
+			    display: inline-block;
+			    clear: both;
+			    width: 30px;
+			    height: 1px;
+			    background: #ddd9db;
+			    position: absolute;
+			    top: 12px;
+			    left: 0;
+			}
+			
+			@include PHONE-N{
+				margin-bottom: 10px;
+				padding-left: 45px;
+
+				&:before{
+					width: 22px;
+					top: 10px;
+				}
+			}
+
+			@include TABLET-N {
+		        line-height: 1.5;
+		        padding-left: 47px;
+		        
+		        &:before{
+		            width: 25px;
+		            top: 8px;
+		        }
+			}
+
+			@include DESKTOP-N {
+			    line-height: 20px;
+
+			    &:before{
+			    	top: 10px;
+			    }
+			}
+
+			@include DESKTOP-S {
+				margin-bottom: 15rem;
+				padding-left: 60rem;
+
+				&:before{
+					width: 30rem;
+					height: 1rem;
+					top: 10rem;
+				}
+			}
+			
+			ul{
+			    margin-bottom: -16px;
+			    margin-top: 22px;
+			    width: auto;
+
+				li{
+				    list-style-type: none;
+				    position: relative;
+					text-indent: -7px;
+				    margin-bottom: 15px;
+				    box-sizing: border-box;
+				    padding-left: 60px;
+				    position: relative;
+				    line-height: 1.6875;
+
+					&:before{
+						width: 6px;
+						height: 6px;
+						background-color: $light;
+						border-radius: 50%;
+						position: relative;
+						top: 0;
+						left: -20px;
+					}
+					
+					@include PHONE-N {
+						line-height: 20px;
+						margin-bottom: 10px;
+						padding-left: 45px;
+					}
+
+					@include TABLET-N {
+						margin-bottom: 10px;
+				        line-height: 1.5;
+				        padding-left: 47px;
+					}
+
+					@include DESKTOP-N {
+						&:before{
+						}
+					}
+					@include DESKTOP-S {
+						margin-bottom: 15rem;
+						
+						&:before{
+							width: 6rem;
+							height: 6rem;
+						}
+					}
+				}
+
+				@include PHONE-N {
+					margin-bottom: -10px;
+			    	margin-top: 16px;
+				}
+
+				@include TABLET-N {
+					margin-bottom: -16px;
+			    	margin-top: 22px;
+			    	padding-left: 47px;
+				}
+
+				@include DESKTOP-N {
+					margin-bottom: -16px;
+			    	margin-top: 22px;
+				}
+
+				@include DESKTOP-S {
+					margin-bottom: -16rem;
+			    	margin-top: 22rem;
+				}
+
+			}
+		}
+	}
+	
+	a{
+		cursor: context-menu;
+	}
+
+	a, p{
+		color: $sdark;
+    	line-height: 1.5;
+    	text-decoration: none;
+		margin-bottom: 24px;
+		font-size: inherit;
+
+    	span{
+    		text-decoration: underline;
+    		cursor: pointer;
+    		display: inline-block;
+
+    		&:after{
+    			content: '';
+				display: inline-block;
+				clear: both;
+				background: url("../images/arrow.svg") no-repeat center;
+			    width: 20px;
+			    height: 6px;
+			    vertical-align: middle;
+			    margin-left: 5px;
+		        background-size: contain;
+    		}
+    	}
+
+		@include PHONE-N {
+    	}
+
+    	@include TABLET-N {
+    		
+    		width: 600px;
+    		margin-left: auto;
+    		margin-right: auto;
+    		display: block;
+    	}
+		
+		@include DESKTOP-N {
+    		
+    	}
+
+    	@include DESKTOP-S {
+    		
+    		span{
+    			&:after{
+    				width: 20rem;
+    				height: 6rem;
+    				margin-left: 5rem;
+    			}
+    		}
+    	}	
+	}
+
+	@include PHONE-N {
+		width: 100%;
+		display: block;
+	    padding: 0 10px;
+    	box-sizing: border-box;
+    	margin: 0;
+	}
+
+	@include TABLET-N {
+		width: 580px;
+	    display: block;
+	    margin: 0 auto 50px;
+	}
+
+	@include DESKTOP-N {
+	    width: 522px;
+	    vertical-align: middle;
+	}
+
+	@include DESKTOP-S {
+		@include font-base_s();
+	    width: 570px;
+	    vertical-align: middle;
+	}
+	
+}
+

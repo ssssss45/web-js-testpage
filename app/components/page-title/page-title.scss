@@ -1,0 +1,28 @@
+.page-title{
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin: 58px 0 40px;
+
+    @include FONT-CONTENT-TITLE();
+
+    @include TABLET-N{
+        text-align: left;
+        margin: 52px 0 30px;
+    }
+
+    @include PHONE-N{
+        text-align: left;
+        margin: 32px 0;
+    }
+
+    @include DESKTOP-N{
+        text-align: left;
+    }
+
+    @include DESKTOP-S{
+        font-size: 48rem;
+        margin: 58rem 0 40rem;
+        @include font-base_s( $min-font:48px, $add:2, $ls:.55px);
+    }
+}

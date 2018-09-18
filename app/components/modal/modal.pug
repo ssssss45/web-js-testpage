@@ -1,0 +1,24 @@
+
+.modal#modal-thanx(style={display:"none"})
+  .modal__fader
+    .modal__wrapper
+      .modal__button-close
+      .modal__content
+        h2.modal__title Спасибо
+        .modal__text Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время
+        button.button.button_dark(data-modal="close")
+          .button__text Закрыть
+
+.modal#modal-feedback(style={display:"none"})
+  .modal__fader
+    .modal__wrapper
+      .modal__button-close
+      .modal__content
+        h2.modal__title Напишите нам
+        form.modal__form(action="")
+          +input(type="text" name="name" placeholder="ФИО")
+          +input.input_small(type="text" name="phone" placeholder="Телефон")
+          +input.input_small(type="text" name="email" placeholder="Ваш E-mail")
+          +input-textarea(type="textarea" name="message" placeholder="Ваше сообщение")
+          button(type="submit").button.button_dark
+            .button__text Отправить

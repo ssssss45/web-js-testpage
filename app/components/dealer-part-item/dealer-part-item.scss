@@ -1,0 +1,112 @@
+.dealer-part-item {
+    margin: 60px 0 0;
+    height: auto;
+
+    @include PHONE-N{
+    	margin-top: 40px;
+    }
+
+    @include TABLET-N{
+        margin-top: 35px;
+    }
+
+    @include DESKTOP-N{
+        margin-top: 42px;
+    }
+    @include DESKTOP-S{
+        margin-top: 60rem;
+    }
+}
+
+.dealer-part-item__title {
+    display: block;
+    font-family: $fnd;
+    color: $sdark;
+    margin-bottom: 35px;
+    font-size: 18px;
+
+    @include FONT-R-DEALER-TITLE();
+
+    @include PHONE-N{
+	    // font-size: 14px;
+    	// line-height: 20px;
+    	margin-bottom: 25px;
+    }
+
+    @include TABLET-N{
+        // font-size: 16px;
+        margin-bottom: 17px;
+    }
+
+    @include DESKTOP-N{
+        // font-size: 16px;
+        margin-bottom: 17px;
+    }
+
+    @include DESKTOP-S{
+        // font-size: 18rem;
+        margin-bottom: 34rem;
+        @include font-base_s( $min-font:18px, $add:2, $ls:.55px);
+    }
+}
+
+.argument {
+    display: block;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    padding-left: 60px;
+    position: relative;
+    // font-size: 16px;
+    // line-height: 1.6875;
+    color: $sdark;
+
+    @include FONT-CONTENT-TEXT();
+
+    &:before {
+	    content: "";
+	    display: inline-block;
+	    clear: both;
+	    width: 30px;
+	    height: 1px;
+	    background: #ddd9db;
+	    position: absolute;
+	    top: 12px;
+	    left: 0;
+	}
+
+	@include PHONE-N{
+		// font-size: 12px;
+		// line-height: 20px;
+		margin-bottom: 10px;
+		padding-left: 45px;
+
+		&:before{
+			width: 22px;
+			top: 10px;
+		}
+	}
+
+    @include TABLET-N{
+        margin-bottom: 10px;
+        // line-height: 1.5;
+        // font-size: 12px;
+        padding-left: 47px;
+        
+        &:before{
+            width: 25px;
+            top: 8px;
+        }
+    }
+
+    @include DESKTOP-N{
+        // font-size: 14px;
+        // line-height: 20px;
+    }
+
+    @include DESKTOP-S{
+        // font-size: 16rem;
+        padding-left: 60rem;
+        margin-bottom: 15rem;
+        @include font-base_s( $min-font:16px, $add:2, $ls:.55px);
+    }
+}
