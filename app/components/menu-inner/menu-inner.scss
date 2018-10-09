@@ -573,6 +573,38 @@ $list-p_desktop: 40px;
     }
 }
 
+.menu-inner__footer-text{
+	
+	@include font( $FONT-BASE, 12px, 12px);
+    text-align: left;
+    width: 100%;
+    color: $sdark;
+    text-decoration: none;
+
+    @include PHONE-N {
+    	display: inline-block;
+	    width: 100%;
+	    vertical-align: middle;
+	    font-size: 10px;
+	    line-height: 12px;
+	    text-align: left;
+    }
+
+	@include TABLET-N {
+	}
+
+    @include DESKTOP-N {
+    	font-size: 10px;
+    	line-height: 10px;
+    }
+
+    @include DESKTOP-S {
+    	font-size: 12rem;
+		line-height: 12rem;
+    	width: auto;
+    }
+}
+
 // FOR MAC
 .mac{
 	.menu-inner__item{
