@@ -1,0 +1,90 @@
+{
+	"content" :
+	{
+		"menu-save_and_multiply": {
+			"head" : "Сохранить и приумножить",
+			"text" : "Обслуживание в московском офисе Friedrich Wilhelm Raiffeisen сочетает в себе преимущества индивидуального клиентского сервиса в Москве с инвестиционными решениями, разработанными в центральном офисе Группы Райффайзен в Вене.",
+			"image" : "../images/inner-illustrations-5.png"
+		},
+		"menu-get_financing" :
+		{
+			
+			"head" : "Получить финансирование",
+			"text" : "Текст страницы получить финансирование",
+			"image" : "../images/inner-illustrations-4.png"
+		},
+		"menu-buisness_solutions" :
+		{
+			"head" : "Решения для вашего бизнеса",
+			"text" : "Текст страницы решения для вашего бизнеса",
+			"image" : "../images/inner-illustrations-3.png"
+		},
+		"menu-banking_service" :
+		{
+			"head" : "Банковское обслуживание",
+			"text" : "Текст страницы банковское обслуживание",
+			"image" : "../images/inner-illustrations-2.png"
+		},
+		"menu-family_solutions":
+		{
+			"head" : "Решения для вашей семьи и консалтинг",
+			"text" : "Текст страницы решения для вашей семьи и консалтинг",
+			"image" : "../images/inner-illustrations-1.png"
+		},
+		"menu-about":
+		{
+			"head" : "О нас",
+			"text" : "Текст страницы о нас",
+			"image" : "../images/inner-illustrations-1.png"
+		},
+		"menu-contacts":
+		{
+			"head" : "Контакты",
+			"text" : "Текст страницы контакты",
+			"image" : "../images/inner-illustrations-1.png"
+		}
+	},
+
+	"first_id" :  "menu-save_and_multiply",
+	
+	"menu" : 
+	[
+		{
+			"id": "menu-save_and_multiply",
+			"text" : "Сохранить и приумножить"
+		},
+		{
+			"id" : "menu-get_financing",
+			"text" : "Получить финансирование"
+		},
+		{
+			"id" : "menu-buisness_solutions",
+			"text" : "Решения для вашего бизнеса"
+		},
+		{
+			"id" : "menu-banking_service",
+			"text" : "Банковское обслуживание"
+		},
+		{
+			"id" : "menu-family_solutions",
+			"text" : "Решения для вашей семьи и консалтинг"
+		},
+		{
+			"divider" : true
+		},
+		{
+			"id" : "menu-about",
+			"text" : "О нас"
+		},
+		{
+			"id" : "menu-contacts",
+			"text" : "Контакты"
+		}
+	],
+
+	"texts" :
+	{
+		"phone" : "+7 (495) 662 76 77",
+		"langs" : ["ru", "eng", "ger"]
+	}
+}
