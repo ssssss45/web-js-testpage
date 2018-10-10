@@ -34,9 +34,12 @@ $(function(){
 	{
 		currentId = data; 
 		var item = content[currentId];
-
-		//заполнение шаблона содержимым
-		var html = template({head: item.head[lang], content: item.text[lang], image: item.image});
-		$(".inner-part").html(html);
+		$element.fadeOut(500, function()
+		{
+			//заполнение шаблона содержимым
+			var html = template({head: item.head[lang], content: item.text[lang], image: item.image});
+			$element.html(html);
+			$element.fadeIn(500);
+		})
 	}
 });
