@@ -16,14 +16,14 @@ $(function(){
 
 		//заполнение меню
 		menu.forEach(function(e) {
-			//добавление пунктов меню
+			//добавление разделителей
 			if (e.divider !== undefined){
 				$("<li class='menu-inner__item menu-inner__item-line'></li>")
 					.appendTo($menu_items)
 				;
 			}else{
-				//	обавление разделителей
-				$('<li class="menu-inner__item" id="' + e.id + '">' + e[lang] + '</li>')
+				//добавление пунктов меню
+				$('<li class="menu-inner__item" id="' + e.id + '">' + e.text[lang] + '</li>')
 					.appendTo($menu_items)
 				;
 			}
@@ -52,7 +52,6 @@ $(function(){
 				id : page_id
 			});
 		});
-		switchBottomTexts();
 	});
 
 	//слушатель на событие нажатия кнопки открытия меню
@@ -64,16 +63,10 @@ $(function(){
 	$(document).on("language:changed", function(e,data){
 		lang = data.lang;
 		menu.forEach(function(e) {
-			$("#" + e.id, $element).html(e[lang]);
+			if (e.divider == undefined)
+			{
+				$("#" + e.id, $element).html(e.text[lang]);
+			}
 		});
-
-		switchBottomTexts();
 	});
-
-	//функция смены текстов (подписи ссылки на скачивание и копирайта)
-	function switchBottomTexts()
-	{
-		$(".menu-inner__footer-text", $element).html(texts.copyright[lang]);
-		$(".menu-inner__download-button-text", $element).html(texts.download_link_text[lang])
-	}
 });
