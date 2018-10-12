@@ -65,8 +65,9 @@
     @media only screen and (min-width: $WIDTH-TABLET-N) and (max-width: $WIDTH-DESKTOP-1200 - 1) { @content; }
 }
 
-@mixin DESKTOP-S{
+@mixin DESKTOP-S(){
     @media only screen and (min-width: $WIDTH-DESKTOP-1200) and (max-width: $WIDTH-DESKTOP-N - 1) { @content; }
+    // @at-root .is_desktop &{ @content; }
 }
 
 @mixin LARGE{

@@ -13,7 +13,27 @@ $(function(){
 
 			texts = json.texts;
 			lang = json.default_lang;
+
+			//первоначальаня установка текстов
 			switchStaticLanguage();
+
+			//первоначальная установка класса body
+			setBodyClass();
+
+			//установка слушателя на ресайз для изменения класса body
+			$( window ).resize(setBodyClass);
+
+			function setBodyClass()
+			{
+				var width = window.innerWidth;
+				
+				$("body")
+					.toggleClass("is_phone", width < 768 )
+					.toggleClass("is_tablet", width >= 768 && width < 1024 )
+					.toggleClass("is_desktop", width >= 1024 )
+				;
+				
+			}
 		});	
 
 		//слушатель на событие переключения  языка
@@ -33,6 +53,8 @@ $(function(){
 				$item.empty().html(texts[$item.data("trnslt")][lang]);
 			}
 		}
+
+
 });
 
 

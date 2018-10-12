@@ -159,7 +159,7 @@ $list-p_desktop: 40px;
 		}
 	}
 	
-	@include DESKTOP-N {
+	@include DESKTOP-N (){
 	    right: -120%;
 		width: $menu-w_desktop;
 		z-index: $Z-MENU;
@@ -181,7 +181,34 @@ $list-p_desktop: 40px;
 		width: 292rem;
 	}
 
+	
+	//
+	@at-root .is_desktop &{
+		background: gray;
+	}
+
+	@at-root .is_phone &{
+		background: green;
+	}
+
+	@at-root .is_tablet &{
+		background: blue;
+	}
+	
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 .menu-inner_visible{
 	
@@ -622,5 +649,16 @@ $list-p_desktop: 40px;
 	.menu-inner__item_choosed{
 		font-weight: 100;
 	}
+}
+
+
+
+
+body.is_tablet .menu-inner__download{
+	background: green;
+}
+
+body.is_desktop .menu-inner__download{
+	background: blue;
 }
 
