@@ -192,7 +192,7 @@ $list-p_desktop: 40px;
 	}
 
 	@at-root .is_tablet &{
-		background: blue;
+		background: white;
 	}
 	
 
@@ -326,6 +326,11 @@ $list-p_desktop: 40px;
 
 }
 
+.menu-inner__item-link{
+	text-decoration: none;
+	color: inherit;
+}
+
 .menu-inner__item_choosed{
 	// font-weight: 900;
 	position: relative;
@@ -348,7 +353,7 @@ $list-p_desktop: 40px;
 	}
 
 	@include DESKTOP-S{
-		margin: 0;
+		margin: 23px 0;
 		
 		&:after{
 			height: 10rem;
@@ -369,7 +374,7 @@ $list-p_desktop: 40px;
 	}
 
 	@include DESKTOP-N{
-		margin-bottom: 0;
+		margin: 27px 0;
 	}
 }
 
@@ -659,6 +664,6 @@ body.is_tablet .menu-inner__download{
 }
 
 body.is_desktop .menu-inner__download{
-	background: blue;
+	background: white;
 }
 

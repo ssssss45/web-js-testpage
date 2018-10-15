@@ -1,6 +1,7 @@
 $(function(){
 
 var lang;
+var id;
 
 	var $element = $('.langs');
 	if( !$element.length ) return;
@@ -22,6 +23,7 @@ var lang;
 
 		//заполнение меню языков
 		langs.forEach(function(e) {
+
 			var $langSwitch = $('<li class="langs__item">' + e + '</li>').appendTo($lang_items);
 			$langSwitch.data("lang",e);
 			//слушатель на нажатие на язык в меню языков
@@ -35,6 +37,15 @@ var lang;
 					});
 				})
 		});
+
+		$(document).on("router:switch-content", function(e,data){
+				if (lang != data.lang)
+				{
+					lang = data.lang;
+					$(".langs__current", $element).html(lang);
+				}
+			})
+		;
 	});
 
 });

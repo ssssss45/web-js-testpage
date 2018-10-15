@@ -11,8 +11,11 @@ $(function(){
 		//получение содержимого меню и текстов
 		menu = data.data.menu;
 		texts = data.data.texts;
+		first = data.data.first_id;
+
 		var $menu_items = $( ".menu-inner__items", $element );
-		lang = data.data.default_lang;
+
+		lang = data.data.default_lang;	
 
 		//заполнение меню
 		menu.forEach(function(e) {
@@ -21,10 +24,18 @@ $(function(){
 				$("<li class='menu-inner__item menu-inner__item-line'></li>")
 					.appendTo($menu_items)
 				;
-			}else{
+			}
+			else
+			{
 				//добавление пунктов меню
 				$('<li class="menu-inner__item" id="' + e.id + '">' + e.text[lang] + '</li>')
 					.appendTo($menu_items)
+					.click(function(){
+						$(document).trigger("menu-inner:navigate",{
+							link: lang + '/' + e.id,
+							id: e.id
+						});
+					})
 				;
 			}
 		});
@@ -35,23 +46,6 @@ $(function(){
 				$('.menu-inner').removeClass("menu-inner_visible");
 			})
 		;
-
-		//слушатель нажатия на пункт меню
-		$menu_items.click(function(event)
-		{
-			var page_id = event.target.id;
-			if( !page_id ) return;
-
-			//убирание класса с предыдущей выделенной кнопки
-			$('.menu-inner__item_choosed', $element).removeClass('menu-inner__item_choosed');
-			//установка класса на выделенную кнопку
-			$('#' + page_id, $element).addClass('menu-inner__item_choosed');
-
-			//событие нажатия на пункт меню (ловится в inner-part для смены контента)
-			$(document).trigger("menu-inner:switch-content",{
-				id : page_id
-			});
-		});
 	});
 
 	//слушатель на событие нажатия кнопки открытия меню
@@ -59,14 +53,29 @@ $(function(){
 		$element.addClass("menu-inner_visible")
 	});
 
-	//слушатель на событие смены языка
-	$(document).on("language:changed", function(e,data){
-		lang = data.lang;
-		menu.forEach(function(e) {
-			if (e.divider == undefined)
-			{
-				$("#" + e.id, $element).html(e.text[lang]);
-			}
-		});
+	//слушатель на событие переключения пункта меню
+	$(document).on("router:switch-content", function(e,data){
+		//убирание класса с предыдущей выделенной кнопки
+		$('.menu-inner__item_choosed').removeClass('menu-inner__item_choosed');
+		//установка класса на выделенную кнопку
+		$('#' + data.id).addClass('menu-inner__item_choosed');
 	});
+
+	$(document).on("router:switch-content", function(e,data){
+		if (lang != data.lang)
+		{
+			lang = data.lang;
+			switchMenuLang();
+		}
+	});
+
+	function switchMenuLang(data)
+	{
+		menu.forEach(function(e) {
+		if (e.divider == undefined)
+		{
+			$("#" + e.id, $element).html(e.text[lang]);
+		}
+		});
+	}
 });
